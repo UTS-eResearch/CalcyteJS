@@ -1,0 +1,14 @@
+;ASF Grade 4 specification file
+
+;tape error
+*SD tape     0.03 metres   ;95% of readings are within 0.1m (3 S.D.)
+
+;compass error
+*SD compass  0.7 degrees  ;95% of readings are within 2 degrees (3 S.D.)
+
+;clino error
+*SD clino    0.7 degrees  ;95% of readings are within 2 degrees (3 S.D.)
+
+;station position error
+*SD position 0.03 metres   ;95% of positions are within 0.1m (3 S.D.)
+
