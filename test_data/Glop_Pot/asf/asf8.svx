@@ -1,0 +1,14 @@
+;ASF Grade 8 specification file
+
+;tape error
+*SD length    0.0017 metres  ;95% of readings are within 5mm (3 S.D.)
+
+;compass error
+*SD bearing   0.00185 degrees ;95% of readings are within 20" (0.0056 degrees) (3 S.D.)
+
+;clino error
+*SD gradient  0.00185 degrees ;95% of readings are within 20" (0.0056 degrees) (3 S.D.)
+
+;station position error
+*SD position  0.0017 metres  ;95% of positions are within 5mm (3 S.D.)
+

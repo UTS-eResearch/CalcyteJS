@@ -1,0 +1,70 @@
+; CP7 Glop Pot
+; Cooleman Plains, NSW
+
+; MGA Zone 55H
+
+*calibrate declination -13.1 ; MGA
+*equate sump12.11 entrance.11
+
+;-----------------------------------------------------------------------------
+; Downstream from Sump 2 to Sump 1
+; Surveyed: 27/1/2013
+; Keir Vaughan-Taylor
+; Phil Maynard
+; Andreas Klocker
+
+; Instruments:
+; Disto X KMX2
+
+*begin sump12
+*include asf/asf6.svx
+
+;FROM  TO  DISTANCE  COMPASS  CLINO  STATION LRUD
+1  2   12.09  014.5  -2.0  ; 1 Dive tie-off sump2
+2  3   12.95  275.8   1.0  ; 2 Corner
+3  4   10.39  014.6  -1.9  ; 3 Roof pt
+4  5    9.46  327.2   4.4  ; 4 Floor rock
+5  6   11.79  300.3  -0.3  ; 5 Right wall
+6  7   11.43  010.6  -2.4  ; 6 Boulder tip
+7  8    3.52  046.0  -7.6  ; 7 Left wall
+8  9    9.37  351.7   5.6  ; 8 Right ledge
+8  10  12.30  070.5   3.5  ; 10 Left wall
+10 11   8.19  038.1  -4.2  ; 11 Dive tie off sump1
+
+*end sump12
+
+;-----------------------------------------------------------------------------
+; Downstream from Sump 1 to entrance, up ladders to tag.
+; Surveyed: 28/1/2013
+; Andreas Klocker
+; Phil Maynard
+; Keir Vaughan-Taylor
+
+; Instruments:
+; Disto X KMX2, 30m fibreglass tape in sump
+
+*begin entrance
+*include asf/asf6.svx
+*fix CP7 51043.67 54997.56 1240.73
+
+;FROM  TO   DISTANCE COMPASS  CLINO  STATION LRUD
+11  11a  10.0   358.0  -26.1  ; 11 Dive tie off sump 1
+11a 12   14.85  358.0   17.2  ; 12 Dive tie off sump 1
+13  12    7.09  209.3    1.0  ; 13 Left wall corner
+13  14   16.91  025.8   -0.5  ; 14 Bottom of ladder
+
+CP7 15  1.77  314.7  -79.5  ; CP7 tag
+15  16  2.06  289.0  -37.3  ; 15 Boulder in entrance
+16  17  2.27  107.0  -48.4  ; 16 Top of 2c
+17  18  5.61  005.6  -81.3  ; 17 Top of 7p
+18  19  6.87  275.0  -67.3  ; 18 Bottom of 7p, 19 Water
+
+18  20  3.35  114.8   25.3  ; 20 Tip of flowst
+20  21  2.00  084.2   20.2  ; 21 Left wall 
+21  22  4.77  116.1   -7.2  ; 22 Right wall in sqz
+22  23  2.11  067.8   14.1  ; 23 Corner
+23  24  1.82  127.7  -38.0  ; 24 Rock bridge
+24  25  2.62  135.3  -43.6  ; 25 Top of 7p
+25  14  6.13  310.7  -79.4  ; 14 Bottom of ladder
+
+*end entrance
