@@ -68,6 +68,24 @@ describe("Create nested item", function() {
 
     t1.load_json(
       {
+        "contactPoint>TYPE:ContactPoint>":
+          "Email: someone@somewhere.com"
+      },
+      new Collection()
+    );
+
+    assert.equal(t1.nested_items["contactPoint"].types[0], "ContactPoint");
+    assert.equal(
+      t1.nested_items["contactPoint"].name,
+      "Email: someone@somewhere.com"
+    );
+    j1 = t1.to_json_ld_fragment();
+    assert.equal(j1["contactPoint"]["@type"][0], "ContactPoint");
+    assert.equal(j1["contactPoint"]["email"], "someone@somewhere.com");
+
+
+    t1.load_json(
+      {
         "geo>TYPE:GeoCoordinates>":
           "Latitude: -35.623592, Longitude: 148.683836"
       },
@@ -87,6 +105,7 @@ describe("Create nested item", function() {
     done();
   });
 });
+
 describe("Create simple item", function() {
   it("Should create an empty metadata set", function(done) {
     var t1 = new Item();
