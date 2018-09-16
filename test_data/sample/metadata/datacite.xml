@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource xmlns="http://datacite.org/schema/kernel-4" schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4/metadata.xsd">
+  <creators>
+    <creator>
+      <creatorName>Sefton, Peter</creatorName>
+      <givenName>Peter</givenName>
+      <familyName>familyName</familyName>
+      <nameIdentifier schemeURI="http://orcid.org" nameIdentifierScheme="ORCID">http://orcid.org/0000-0002-3545-944X</nameIdentifier>
+    </creator>
+  </creators>
+  <identifier identifierType="DOI">https://dx.doi.org/10.5281/zenodo.1009240</identifier>
+  <titles>
+    <title>Sample dataset for DataCrate v0.2</title>
+  </titles>
+  <publisher>University of Technology Sydney</publisher>
+  <publicationYear>2017</publicationYear>
+  <resourceType resourceTypeGeneral="Dataset">DataCrate v0.1</resourceType>
+</resource>
