@@ -52,6 +52,8 @@ describe("Test helper functions", function() {
       "./test/test_output/index.html",
       true
     );
+
+
     assert.equal(
       index_maker.get_href("http://dx.doi.org/10.5281/zenodo.1009240"),
       "../CATALOG.html"
