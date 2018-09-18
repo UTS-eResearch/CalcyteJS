@@ -1,12 +1,10 @@
 {
   "@context": {
-    "affiliation": "http://schema.org/affiliation",
-    "familyName": "http://schema.org/familyName",
-    "givenName": "http://schema.org/givenName",
-    "name": "http://schema.org/name",
     "address": "http://schema.org/address",
     "identifier": "http://schema.org/identifier",
     "memberOf": "http://schema.org/memberOf",
+    "name": "http://schema.org/name",
+    "issn": "http://schema.org/issn",
     "contentSize": "http://schema.org/contentSize",
     "path": "http://schema.org/contentUrl",
     "creator": "http://schema.org/creator",
@@ -14,7 +12,9 @@
     "encodingFormat": "http://schema.org/encodingFormat",
     "fileFormat": "http://schema.org/fileFormat",
     "license": "http://schema.org/license",
-    "issn": "http://schema.org/issn",
+    "affiliation": "http://schema.org/affiliation",
+    "familyName": "http://schema.org/familyName",
+    "givenName": "http://schema.org/givenName",
     "citation": "http://schema.org/citation",
     "contactPoint": "http://schema.org/contactPoint",
     "datePublished": "http://schema.org/datePublished",
@@ -23,26 +23,16 @@
     "publisher": "http://schema.org/publisher",
     "isPartOf": "http://schema.org/isPartOf",
     "contactType": "http://schema.org/contactType",
-    "Person": "http://schema.org/Person",
     "Organization": "http://schema.org/Organization",
-    "File": "http://schema.org/MediaObject",
-    "Place": "http://schema.org/Place",
     "journal": "http://schema.org/Periodical",
+    "Place": "http://schema.org/Place",
+    "File": "http://schema.org/MediaObject",
+    "Person": "http://schema.org/Person",
     "Dataset": "http://schema.org/Dataset",
     "ScholarlyArticle": "http://schema.org/ScholarlyArticle",
     "ContactPoint": "http://schema.org/ContactPoint"
   },
   "@graph": [
-    {
-      "@id": "0d6ab5d0-cacb-4839-8208-a7b99ebdb8a6",
-      "@type": "Person",
-      "affiliation": {
-        "@id": "1"
-      },
-      "familyName": "Cook",
-      "givenName": "Janet",
-      "name": "Janet Cook"
-    },
     {
       "@id": "1",
       "@type": "Organization",
@@ -82,6 +72,12 @@
         "@id": "http://unsw.edu.au"
       },
       "name": "South Western Sydney Clinical School, University of New South Wales"
+    },
+    {
+      "@id": "29ac8364-7cef-4eb2-86b3-c5cad9f6710a",
+      "@type": "journal",
+      "issn": "1932-6203",
+      "name": "PLOS ONE"
     },
     {
       "@id": "3",
@@ -126,6 +122,10 @@
         "@id": "http://newcastle.edu.au"
       },
       "name": "School of Medicine and Public Health, The University of Newcastle"
+    },
+    {
+      "@id": "7cebec16-1fde-4862-aeed-73c8febb7fa2",
+      "@type": "Place"
     },
     {
       "@id": "8",
@@ -196,11 +196,17 @@
       "name": "Dataset 3"
     },
     {
-      "@id": "a54739f2-4a31-4a28-9201-82723c5827f5",
-      "@type": "Place"
+      "@id": "a2c5862e-ac0d-4547-a867-8e884f2e2a5b",
+      "@type": "Person",
+      "affiliation": {
+        "@id": "1"
+      },
+      "familyName": "Cook",
+      "givenName": "Janet",
+      "name": "Janet Cook"
     },
     {
-      "@id": "b8a59de5-214d-4cc9-801e-3c792f3c3129",
+      "@id": "debb8d80-a627-43a2-8a9b-3e3a9050d162",
       "@type": "Person",
       "affiliation": {
         "@id": "10"
@@ -208,12 +214,6 @@
       "familyName": "Houltram",
       "givenName": "Jennifer",
       "name": "Jennifer Houltram"
-    },
-    {
-      "@id": "db6f56ed-bffe-4dca-a07e-5ad1993fb584",
-      "@type": "journal",
-      "issn": "1932-6203",
-      "name": "PLOS ONE"
     },
     {
       "@id": "http://doi.org/10.4225/59/59672c09f4a4b",
@@ -251,13 +251,13 @@
           "@id": "http://nla.gov.au/nla.party-1509834"
         },
         {
-          "@id": "0d6ab5d0-cacb-4839-8208-a7b99ebdb8a6"
+          "@id": "a2c5862e-ac0d-4547-a867-8e884f2e2a5b"
         },
         {
           "@id": "http://orcid.org/0000-0003-4902-0654"
         },
         {
-          "@id": "b8a59de5-214d-4cc9-801e-3c792f3c3129"
+          "@id": "debb8d80-a627-43a2-8a9b-3e3a9050d162"
         },
         {
           "@id": "http://orcid.org/0000-0001-6611-6565"
@@ -333,13 +333,13 @@
           "@id": "http://nla.gov.au/nla.party-1509834"
         },
         {
-          "@id": "0d6ab5d0-cacb-4839-8208-a7b99ebdb8a6"
+          "@id": "a2c5862e-ac0d-4547-a867-8e884f2e2a5b"
         },
         {
           "@id": "http://orcid.org/0000-0003-4902-0654"
         },
         {
-          "@id": "b8a59de5-214d-4cc9-801e-3c792f3c3129"
+          "@id": "debb8d80-a627-43a2-8a9b-3e3a9050d162"
         },
         {
           "@id": "http://orcid.org/0000-0001-6611-6565"
@@ -351,7 +351,7 @@
       "datePublished": "2017",
       "identifier": "http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0181020",
       "isPartOf": {
-        "@id": "db6f56ed-bffe-4dca-a07e-5ad1993fb584"
+        "@id": "29ac8364-7cef-4eb2-86b3-c5cad9f6710a"
       },
       "name": "Effects of facilitated family case conferencing for advanced dementia: A cluster randomised clinical trial"
     },
