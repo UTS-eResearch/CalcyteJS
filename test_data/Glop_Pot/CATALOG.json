@@ -3,42 +3,381 @@
     "URL": "http://schema.org/URL",
     "description": "http://schema.org/description",
     "name": "http://schema.org/name",
-    "email": "http://schema.org/email",
-    "familyName": "http://schema.org/familyName",
-    "givenName": "http://schema.org/givenName",
-    "identifier": "http://schema.org/identifier",
+    "latitude": "http://schema.org/latitude",
+    "longitude": "http://schema.org/longitude",
     "path": "http://schema.org/contentUrl",
     "hasPart": "http://schema.org/hasPart",
+    "identifier": "http://schema.org/identifier",
     "contentSize": "http://schema.org/contentSize",
     "encodingFormat": "http://schema.org/encodingFormat",
     "fileFormat": "http://schema.org/fileFormat",
+    "email": "http://schema.org/email",
+    "familyName": "http://schema.org/familyName",
+    "givenName": "http://schema.org/givenName",
     "creator": "http://schema.org/creator",
     "license": "http://schema.org/license",
-    "latitude": "http://schema.org/latitude",
-    "longitude": "http://schema.org/longitude",
     "address": "http://schema.org/address",
     "geo": "http://schema.org/geo",
     "contentLocation": "http://schema.org/contentLocation",
     "datePublished": "http://schema.org/datePublished",
     "publisher": "http://schema.org/publisher",
     "contactPoint": "http://schema.org/contactPoint",
-    "Person": "http://schema.org/Person",
+    "GeoCoordinates": "http://schema.org/GeoCoordinates",
     "Dataset": "http://schema.org/Dataset",
     "File": "http://schema.org/MediaObject",
-    "GeoCoordinates": "http://schema.org/GeoCoordinates",
+    "Person": "http://schema.org/Person",
     "Place": "http://schema.org/Place",
     "CreativeWork": "http://schema.org/CreativeWork",
     "Organization": "http://schema.org/Organization"
   },
   "@graph": [
     {
-      "@id": "0d2ae8dc-db25-433c-8129-eb1c675ecd78",
+      "@id": "40399c94-4484-4a51-b5fb-9dc43633e8e9",
       "@type": "Format",
       "URL": "https://survex.com/docs/manual/datafile.htm",
       "description": "Survex is a multi-platform open-source cave surveying package.",
       "extension": ".svx",
       "mime": "text/plain",
       "name": "Survex file"
+    },
+    {
+      "@id": "852e4c23-9792-4b80-b2b5-6f455c42e784",
+      "@type": "GeoCoordinates",
+      "latitude": "-35.623592",
+      "longitude": "148.683836",
+      "name": "Latitude: -35.623592, Longitude: 148.683836"
+    },
+    {
+      "@id": "CATALOG",
+      "@type": "Dataset",
+      "path": "CATALOG",
+      "hasPart": [
+        {
+          "@id": "CATALOG/4dd9ec30-6dbc-4602-81ff-1ecab206e67c.html"
+        },
+        {
+          "@id": "CATALOG/6c754056-fcc5-4d17-8d3f-7271ab5b3990.html"
+        },
+        {
+          "@id": "CATALOG/Keir Vaughan-Taylor.html"
+        },
+        {
+          "@id": "CATALOG/asf.html"
+        },
+        {
+          "@id": "CATALOG/asf_CATALOG_asf.xlsx.html"
+        },
+        {
+          "@id": "CATALOG/asf_README.txt.html"
+        },
+        {
+          "@id": "CATALOG/asf_asf3.svx.html"
+        },
+        {
+          "@id": "CATALOG/asf_asf4.svx.html"
+        },
+        {
+          "@id": "CATALOG/asf_asf5.svx.html"
+        },
+        {
+          "@id": "CATALOG/asf_asf6.svx.html"
+        },
+        {
+          "@id": "CATALOG/asf_asf7.svx.html"
+        },
+        {
+          "@id": "CATALOG/asf_asf8.svx.html"
+        },
+        {
+          "@id": "CATALOG/c0b28bca-0132-4aae-bc52-abed4ab48df5.html"
+        },
+        {
+          "@id": "CATALOG/cp7glop.ai.html"
+        },
+        {
+          "@id": "CATALOG/cp7glop.svx.html"
+        },
+        {
+          "@id": "CATALOG/datasheets.html"
+        },
+        {
+          "@id": "CATALOG/datasheets_CP7Glopdata01.jpg.html"
+        },
+        {
+          "@id": "CATALOG/datasheets_CP7Glopdata02.jpg.html"
+        },
+        {
+          "@id": "CATALOG/http:__orcid.org_0000-0002-2038-7922.html"
+        },
+        {
+          "@id": "CATALOG/http:__orcid.org_0000-0003-4953-0830.html"
+        },
+        {
+          "@id": "CATALOG/http:__orcid.org_0000-0003-4953-9114.html"
+        },
+        {
+          "@id": "CATALOG/https:__creativecommons.org_licenses_by_3.0_au_.html"
+        },
+        {
+          "@id": "CATALOG/https:__suss.caves.org.au_.html"
+        },
+        {
+          "@id": "CATALOG/sketchsheets.html"
+        },
+        {
+          "@id": "CATALOG/sketchsheets_CP7Glopsketch01.jpg.html"
+        },
+        {
+          "@id": "CATALOG/sketchsheets_CP7Glopsketch02.jpg.html"
+        },
+        {
+          "@id": "CATALOG/sketchsheets_CP7Glopsketch03.jpg.html"
+        }
+      ],
+      "identifier": "CATALOG"
+    },
+    {
+      "@id": "CATALOG/4dd9ec30-6dbc-4602-81ff-1ecab206e67c.html",
+      "@type": "File",
+      "contentSize": "3383",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/4dd9ec30-6dbc-4602-81ff-1ecab206e67c.html"
+    },
+    {
+      "@id": "CATALOG/6c754056-fcc5-4d17-8d3f-7271ab5b3990.html",
+      "@type": "File",
+      "contentSize": "3013",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/6c754056-fcc5-4d17-8d3f-7271ab5b3990.html"
+    },
+    {
+      "@id": "CATALOG/Keir Vaughan-Taylor.html",
+      "@type": "File",
+      "contentSize": "3290",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/Keir Vaughan-Taylor.html"
+    },
+    {
+      "@id": "CATALOG/asf.html",
+      "@type": "File",
+      "contentSize": "3372",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/asf.html"
+    },
+    {
+      "@id": "CATALOG/asf_CATALOG_asf.xlsx.html",
+      "@type": "File",
+      "contentSize": "3220",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/asf_CATALOG_asf.xlsx.html"
+    },
+    {
+      "@id": "CATALOG/asf_README.txt.html",
+      "@type": "File",
+      "contentSize": "3040",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/asf_README.txt.html"
+    },
+    {
+      "@id": "CATALOG/asf_asf3.svx.html",
+      "@type": "File",
+      "contentSize": "3024",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/asf_asf3.svx.html"
+    },
+    {
+      "@id": "CATALOG/asf_asf4.svx.html",
+      "@type": "File",
+      "contentSize": "3024",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/asf_asf4.svx.html"
+    },
+    {
+      "@id": "CATALOG/asf_asf5.svx.html",
+      "@type": "File",
+      "contentSize": "3024",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/asf_asf5.svx.html"
+    },
+    {
+      "@id": "CATALOG/asf_asf6.svx.html",
+      "@type": "File",
+      "contentSize": "3024",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/asf_asf6.svx.html"
+    },
+    {
+      "@id": "CATALOG/asf_asf7.svx.html",
+      "@type": "File",
+      "contentSize": "3024",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/asf_asf7.svx.html"
+    },
+    {
+      "@id": "CATALOG/asf_asf8.svx.html",
+      "@type": "File",
+      "contentSize": "3024",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/asf_asf8.svx.html"
+    },
+    {
+      "@id": "CATALOG/c0b28bca-0132-4aae-bc52-abed4ab48df5.html",
+      "@type": "File",
+      "contentSize": "2726",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/c0b28bca-0132-4aae-bc52-abed4ab48df5.html"
+    },
+    {
+      "@id": "CATALOG/cp7glop.ai.html",
+      "@type": "File",
+      "contentSize": "4012",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/cp7glop.ai.html"
+    },
+    {
+      "@id": "CATALOG/cp7glop.svx.html",
+      "@type": "File",
+      "contentSize": "3965",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/cp7glop.svx.html"
+    },
+    {
+      "@id": "CATALOG/datasheets.html",
+      "@type": "File",
+      "contentSize": "3297",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/datasheets.html"
+    },
+    {
+      "@id": "CATALOG/datasheets_CP7Glopdata01.jpg.html",
+      "@type": "File",
+      "contentSize": "4402",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/datasheets_CP7Glopdata01.jpg.html"
+    },
+    {
+      "@id": "CATALOG/datasheets_CP7Glopdata02.jpg.html",
+      "@type": "File",
+      "contentSize": "4287",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/datasheets_CP7Glopdata02.jpg.html"
+    },
+    {
+      "@id": "CATALOG/http:__orcid.org_0000-0002-2038-7922.html",
+      "@type": "File",
+      "contentSize": "4102",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/http:__orcid.org_0000-0002-2038-7922.html"
+    },
+    {
+      "@id": "CATALOG/http:__orcid.org_0000-0003-4953-0830.html",
+      "@type": "File",
+      "contentSize": "3636",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/http:__orcid.org_0000-0003-4953-0830.html"
+    },
+    {
+      "@id": "CATALOG/http:__orcid.org_0000-0003-4953-9114.html",
+      "@type": "File",
+      "contentSize": "4288",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/http:__orcid.org_0000-0003-4953-9114.html"
+    },
+    {
+      "@id": "CATALOG/https:__creativecommons.org_licenses_by_3.0_au_.html",
+      "@type": "File",
+      "contentSize": "6140",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/https:__creativecommons.org_licenses_by_3.0_au_.html"
+    },
+    {
+      "@id": "CATALOG/https:__suss.caves.org.au_.html",
+      "@type": "File",
+      "contentSize": "3048",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/https:__suss.caves.org.au_.html"
+    },
+    {
+      "@id": "CATALOG/sketchsheets.html",
+      "@type": "File",
+      "contentSize": "3531",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/sketchsheets.html"
+    },
+    {
+      "@id": "CATALOG/sketchsheets_CP7Glopsketch01.jpg.html",
+      "@type": "File",
+      "contentSize": "4284",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/sketchsheets_CP7Glopsketch01.jpg.html"
+    },
+    {
+      "@id": "CATALOG/sketchsheets_CP7Glopsketch02.jpg.html",
+      "@type": "File",
+      "contentSize": "4284",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/sketchsheets_CP7Glopsketch02.jpg.html"
+    },
+    {
+      "@id": "CATALOG/sketchsheets_CP7Glopsketch03.jpg.html",
+      "@type": "File",
+      "contentSize": "4260",
+      "encodingFormat": "Hypertext Markup Language",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/96",
+      "filename": [],
+      "name": "CATALOG/sketchsheets_CP7Glopsketch03.jpg.html"
     },
     {
       "@id": "Keir Vaughan-Taylor",
@@ -187,13 +526,6 @@
       "name": "cp7glop.svx"
     },
     {
-      "@id": "d06c5dd2-3cf5-4af7-9481-4c5a303e3fd1",
-      "@type": "GeoCoordinates",
-      "latitude": "-35.623592",
-      "longitude": "148.683836",
-      "name": "Latitude: -35.623592, Longitude: 148.683836"
-    },
-    {
       "@id": "datasheets",
       "@type": "Dataset",
       "path": "datasheets",
@@ -255,12 +587,12 @@
       "name": "datasheets/CP7Glopdata02.jpg"
     },
     {
-      "@id": "f0e272c0-e267-4a30-ad7c-b5fe4987cd66",
+      "@id": "fb3faee3-aa8c-4c7a-8350-b5b9eebbcf57",
       "@type": "Place",
       "address": "Cooleman Plains",
       "description": "Located in the Snowy Mountains Region of NSW, nearest town Tumut 2720",
       "geo": {
-        "@id": "d06c5dd2-3cf5-4af7-9481-4c5a303e3fd1"
+        "@id": "852e4c23-9792-4b80-b2b5-6f455c42e784"
       },
       "name": "Glop Pot"
     },
@@ -302,7 +634,7 @@
       "@id": "https://dx.doi.org/10.1016/this_is_an_example_not_a_real_DOI",
       "@type": "Dataset",
       "contentLocation": {
-        "@id": "f0e272c0-e267-4a30-ad7c-b5fe4987cd66"
+        "@id": "fb3faee3-aa8c-4c7a-8350-b5b9eebbcf57"
       },
       "path": "./",
       "creator": [
@@ -327,6 +659,9 @@
         },
         {
           "@id": "cp7glop.ai"
+        },
+        {
+          "@id": "CATALOG"
         },
         {
           "@id": "asf"

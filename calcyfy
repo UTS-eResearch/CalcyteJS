@@ -114,7 +114,7 @@ if (program.generateHtml) {
     var index_maker = new Index();
     index_maker.init(
       catalog,
-      path.join(dir, html_file_name),
+      path.join(dir),
       multiple,
       path.join(__dirname, "defaults/catalog_template.html")
     );
@@ -193,7 +193,7 @@ if (program.generateHtml) {
         var index_maker = new Index();
         index_maker.init(
           path.join(output_dir, catalog_file_name),
-          path.join(output_dir, html_file_name),
+          path.join(output_dir),
           multiple,
           path.join(__dirname, "defaults/catalog_template.html")
         );
