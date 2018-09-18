@@ -35,6 +35,7 @@ describe("Test helper functions", function() {
   it("Test for path manipulation", function(done) {
     set_up_a_dir();
     var index_maker = new Index();
+
     // Single page version
     index_maker.init(
       "../test_data/sample_CATALOG.json",
@@ -52,11 +53,44 @@ describe("Test helper functions", function() {
       "./test/test_output/index.html",
       true
     );
+<<<<<<< HEAD
+=======
+   
+    var home_path = index_maker.get_html_path("http://dx.doi.org/10.5281/zenodo.1009240")
+    assert.equal(home_path, "CATALOG.html")   
+
+    var my_path = index_maker.get_html_path("http://soemthing.com/this/it")
+    assert.equal(my_path, "CATALOG_files/pairtree_root/ht/tp/+=/=s/oe/mt/hi/ng/,c/om/=t/hi/s=/it/index.html")   
+
+    // Examples from pairtree spec
+    var http_path = index_maker.get_html_path("http://n2t.info/urn:nbn:se:kb:repos-1");
+    assert.equal(http_path, "CATALOG_files/pairtree_root/ht/tp/+=/=n/2t/,i/nf/o=/ur/n+/nb/n+/se/+k/b+/re/po/s-/1/index.html")
+
+
+    var swearing_path = index_maker.get_html_path("what-the-*@?#!^!?");
+    assert.equal(swearing_path, "CATALOG_files/pairtree_root/wh/at/-t/he/-^/2a/@^/3f/#!/^5/e!/^3/f/index.html")
+>>>>>>> origin/feature/pairtree-paths
 
 
     assert.equal(
-      index_maker.get_href("http://dx.doi.org/10.5281/zenodo.1009240"),
-      "../CATALOG.html"
+      index_maker.get_href("http://dx.doi.org/10.5281/zenodo.1009240", "http://dx.doi.org/10.5281/zenodo.1009240" ),
+      "CATALOG.html"
+    );
+
+    assert.equal(
+      index_maker.get_href("http://orcid.org/0000-0002-3545-944X", "http://dx.doi.org/10.5281/zenodo.1009240" ),
+      "CATALOG_files/pairtree_root/ht/tp/+=/=o/rc/id/,o/rg/=0/00/0-/00/02/-3/54/5-/94/4X/index.html"
+    );
+
+
+    assert.equal(
+      index_maker.get_href("http://dx.doi.org/10.5281/zenodo.1009240", "http://orcid.org/0000-0002-3545-944X" ),
+      "../../../../../../../../../../../../../../../../../../../../CATALOG.html"
+    );
+
+    assert.equal(
+      index_maker.get_href("http://orcid.org/0000-0002-3545-944X", "http://n2t.info/urn:nbn:se:kb:repos-1" ),
+      "../../../../../../../../../../../../../../../../=o/rc/id/,o/rg/=0/00/0-/00/02/-3/54/5-/94/4X/index.html"
     );
 
     assert.equal(

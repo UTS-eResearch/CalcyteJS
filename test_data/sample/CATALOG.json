@@ -1,22 +1,19 @@
 {
   "@context": {
-    "latitude": "http://schema.org/latitude",
-    "longitude": "http://schema.org/longitude",
-    "name": "http://schema.org/name",
+    "path": "http://schema.org/contentUrl",
+    "identifier": "http://schema.org/identifier",
     "URL": "http://schema.org/URL",
     "description": "http://schema.org/description",
-    "identifier": "http://schema.org/identifier",
+    "model": "http://schema.org/model",
+    "name": "http://schema.org/name",
+    "serialNumber": "http://schema.org/serialNumber",
+    "latitude": "http://schema.org/latitude",
+    "longitude": "http://schema.org/longitude",
+    "agent": "http://schema.org/agent",
+    "instrument": "http://schema.org/instrument",
+    "result": "http://schema.org/result",
     "creator": "http://schema.org/creator",
     "datePublished": "http://schema.org/datePublished",
-    "isOutputOf": "http://purl.org/cerif/frapo/isOutputOf",
-    "contact": "http://schema.org/accountablePerson",
-    "contentLocation": "http://schema.org/contentLocation",
-    "path": "http://schema.org/contentUrl",
-    "hasPart": "http://schema.org/hasPart",
-    "keywords": "http://schema.org/keywords",
-    "publisher": "http://schema.org/publisher",
-    "relatedLink": "http://schema.org/relatedLink",
-    "temporalCoverage": "http://schema.org/temporalCoverage",
     "funder": "http://schema.org/funder",
     "affiliation": "http://schema.org/affiliation",
     "email": "http://schema.org/email",
@@ -24,18 +21,26 @@
     "givenName": "http://schema.org/givenName",
     "address": "http://schema.org/address",
     "geo": "http://schema.org/geo",
+    "isOutputOf": "http://purl.org/cerif/frapo/isOutputOf",
+    "contact": "http://schema.org/accountablePerson",
+    "contentLocation": "http://schema.org/contentLocation",
+    "hasPart": "http://schema.org/hasPart",
+    "keywords": "http://schema.org/keywords",
+    "publisher": "http://schema.org/publisher",
+    "relatedLink": "http://schema.org/relatedLink",
+    "temporalCoverage": "http://schema.org/temporalCoverage",
     "title": "http://schema.org/title",
     "contentSize": "http://schema.org/contentSize",
     "contributor": "http://schema.org/contributor",
     "encodingFormat": "http://schema.org/encodingFormat",
     "fileFormat": "http://schema.org/fileFormat",
     "license": "http://schema.org/license",
-    "GeoCoordinates": "http://schema.org/GeoCoordinates",
-    "Equipment": "http://purl.org/cerif/frapo/Equipment",
+    "Dataset": "http://schema.org/Dataset",
     "IndividualProduct": "http://schema.org/IndividualProduct",
+    "GeoCoordinates": "http://schema.org/GeoCoordinates",
+    "CreateAction": "http://schema.org/CreateAction",
     "Organization": "http://schema.org/Organization",
     "ScholarlyArticle": "http://schema.org/ScholarlyArticle",
-    "Dataset": "http://schema.org/Dataset",
     "Project": "http://purl.org/cerif/frapo/Project",
     "Person": "http://schema.org/Person",
     "Place": "http://schema.org/Place",
@@ -44,22 +49,40 @@
   },
   "@graph": [
     {
-      "@id": "3416e420-9a97-43c9-9404-9cd28cb1ac7e",
+      "@id": "CATALOG",
+      "@type": "Dataset",
+      "path": "CATALOG",
+      "identifier": "CATALOG"
+    },
+    {
+      "@id": "EPL1",
+      "@type": "IndividualProduct",
+      "URL": "https://en.wikipedia.org/wiki/Olympus_PEN_E-PL1",
+      "description": "Olympus camera with Panasonic 20mm lens",
+      "identifier": "EPL1",
+      "model": "EPL 1",
+      "name": "EPL1 Camera",
+      "serialNumber": "123456778"
+    },
+    {
+      "@id": "ae43952a-5970-40ac-8dbf-be9839690e69",
       "@type": "GeoCoordinates",
       "latitude": "-33.7152",
       "longitude": "150.30119",
       "name": "Latitude: -33.7152, Longitude: 150.30119"
     },
     {
-      "@id": "EPL1",
-      "@type": [
-        "Equipment",
-        "IndividualProduct"
-      ],
-      "URL": "https://en.wikipedia.org/wiki/Olympus_PEN_E-PL1",
-      "description": "Olympus camera with Panasonic 20mm lens",
-      "identifier": "EPL1",
-      "name": "EPL1 Camera"
+      "@id": "fa5f847a-7d36-467e-b8a8-863b9bee0854",
+      "@type": "CreateAction",
+      "agent": {
+        "@id": "http://orcid.org/0000-0002-3545-944X"
+      },
+      "instrument": {
+        "@id": "EPL1"
+      },
+      "result": {
+        "@id": "pics/19093074_10155469333581584_5707039334816454031_o.jpg"
+      }
     },
     {
       "@id": "http://ands.org.au",
@@ -80,44 +103,6 @@
         "dx.doi.org/10.1000/123456"
       ],
       "name": "This is an example publication with a dodgy DOI"
-    },
-    {
-      "@id": "http://dx.doi.org/10.5281/zenodo.1009240",
-      "@type": "Dataset",
-      "isOutputOf": "DataCrate",
-      "contact": {
-        "@id": "http://orcid.org/0000-0002-3545-944X"
-      },
-      "contentLocation": {
-        "@id": "http://www.geonames.org/8152662/catalina-park.html"
-      },
-      "path": "./",
-      "creator": {
-        "@id": "http://orcid.org/0000-0002-3545-944X"
-      },
-      "datePublished": "2017-06-29",
-      "description": "This is a simple dataset for demonstration purposes it contains just one image and a directory full of useless text files.",
-      "hasPart": [
-        {
-          "@id": "lots_of_little_files"
-        },
-        {
-          "@id": "pics"
-        }
-      ],
-      "identifier": [
-        "http://dx.doi.org/10.5281/zenodo.1009240",
-        "dx.doi.org/10.5281/zenodo.1009240"
-      ],
-      "keywords": "Dogs, Fences, The Gully",
-      "name": "Sample dataset for DataCrate v0.2",
-      "publisher": {
-        "@id": "http://uts.edu.au"
-      },
-      "relatedLink": {
-        "@id": "http://dx.doi.org/10.1000/123456"
-      },
-      "temporalCoverage": "2017"
     },
     {
       "@id": "http://eresearch.uts.edu.au/projects/provisioner",
@@ -160,7 +145,7 @@
       "address": "Katoomba, NSW",
       "description": "Catalina Park is a disused motor racing venue, located at Katoomba, in the Blue Mountains, New South Wales, Australia, and is recognised as an Aboriginal Place due to the long association of the local Gundungarra and Darug clans to the area.",
       "geo": {
-        "@id": "3416e420-9a97-43c9-9404-9cd28cb1ac7e"
+        "@id": "ae43952a-5970-40ac-8dbf-be9839690e69"
       },
       "identifier": "http://www.geonames.org/8152662/catalina-park.html",
       "name": "Catalina Park"
@@ -168,9 +153,50 @@
     {
       "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
       "@type": "CreativeWork",
-      "description": "Attribution-NonCommercial-ShareAlike 3.0 Australia (CC BY-NC-SA 3.0 AU)\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\nThis is a human-readable summary of (and not a substitute for) the license. Disclaimer.\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\nYou are free to:\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\nShare — copy and redistribute the material in any medium or format\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\nAdapt — remix, transform, and build upon the material\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\nThe licensor cannot revoke these freedoms as long as you follow the license terms.\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\nUnder the following terms:\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\nAttribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\nNon-Commercial — You may not use the material for commercial purposes.\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\nShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\n\r\r\nNo additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.",
+      "description": "This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/au/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.",
       "identifier": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
       "name": "CC BY-NC-SA 3.0 AU"
+    },
+    {
+      "@id": "https://dx.doi.org/10.5281/zenodo.1009240",
+      "@type": "Dataset",
+      "isOutputOf": "DataCrate",
+      "contact": {
+        "@id": "http://orcid.org/0000-0002-3545-944X"
+      },
+      "contentLocation": {
+        "@id": "http://www.geonames.org/8152662/catalina-park.html"
+      },
+      "path": "./",
+      "creator": {
+        "@id": "http://orcid.org/0000-0002-3545-944X"
+      },
+      "datePublished": "2017-06-29",
+      "description": "This is a simple dataset for demonstration purposes it contains just one image and a directory full of useless text files.",
+      "hasPart": [
+        {
+          "@id": "CATALOG"
+        },
+        {
+          "@id": "lots_of_little_files"
+        },
+        {
+          "@id": "pics"
+        }
+      ],
+      "identifier": [
+        "https://dx.doi.org/10.5281/zenodo.1009240",
+        "dx.doi.org/10.5281/zenodo.1009240"
+      ],
+      "keywords": "Dogs, Fences, The Gully",
+      "name": "Sample dataset for DataCrate v0.2",
+      "publisher": {
+        "@id": "http://uts.edu.au"
+      },
+      "relatedLink": {
+        "@id": "http://dx.doi.org/10.1000/123456"
+      },
+      "temporalCoverage": "2017"
     },
     {
       "@id": "https://github.com/UTS-eResearch/projects/datacrate",
