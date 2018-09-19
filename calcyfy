@@ -136,7 +136,6 @@ if (program.generateHtml) {
 } else {
   //TODO - there is a lot of repetition here, sort it out
   var zipname;
-
   dirs.forEach(function(dir) {
     if (shell.test("-d", dir)) {
       var c = new Collection();
@@ -146,8 +145,10 @@ if (program.generateHtml) {
         output_dir = path.join(process.cwd(), output_dir);
       }
       if (program.bag) {
+        
         output_dir = path.join(program.bag, path.basename(dir));
         c.bag(output_dir);
+        console.log("OUTPUT", output_dir)
         if (!path.isAbsolute(output_dir)) {
           output_dir = path.join(process.cwd(), output_dir);
         }
@@ -193,9 +194,10 @@ if (program.generateHtml) {
           }
         }
         var index_maker = new Index();
+        console.log("OUTPUT", output_dir)
         index_maker.init(
           path.join(output_dir, catalog_file_name),
-          path.join(output_dir),
+          output_dir,
           multiple,
           path.join(__dirname, "defaults/catalog_template.html")
         );
