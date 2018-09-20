@@ -22,16 +22,15 @@ const Collection = require("./lib/collection.js");
 const Index = require("./lib/index_html.js");
 const Datacite = require("./lib/datacite.js");
 const Bag = require("./lib/bag.js");
-const args = require("minimist")(process.argv.slice(2));
+//const args = require("minimist")(process.argv.slice(2));
+const path = require("path");
 const shell = require("shelljs");
 const program = require("commander");
-const path = require("path");
-const html_file_name = "CATALOG.html";
-const catalog_file_name = "CATALOG.json";
 const defaults = require("./lib/defaults.js");
+const html_file_name = defaults.html_file_name;
+const catalog_file_name = defaults.catalog_json_file_name;
 const JSON_helper = require("./lib/jsonldhelper.js")
 const fs = require("fs")
-
 var dirs = undefined;
 program
   .version("0.1.0")
@@ -194,7 +193,6 @@ if (program.generateHtml) {
           }
         }
         var index_maker = new Index();
-        console.log("OUTPUT", output_dir)
         index_maker.init(
           path.join(output_dir, catalog_file_name),
           output_dir,

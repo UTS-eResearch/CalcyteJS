@@ -4,7 +4,7 @@
       "Source-Organization":"University of Technology Sydney",
       "Contact-Name":"Peter Sefton",
       "External-Description":"BagIt profile for DataCrate research data packages. ",
-      "Version":"0.2"
+      "Version":"0.3"
    },
 
   Tag-Files-Required: ["CATALOG.html", "CATALOG.json" ],
