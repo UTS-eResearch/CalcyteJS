@@ -1,0 +1,107 @@
+{
+  "@context": {
+    "path": "http://schema.org/contentUrl",
+    "name": "http://schema.org/name",
+    "description": "http://schema.org/description",
+    "dateCreated": "http://schema.org/dateCreated",
+    "datePublished": "http://schema.org/datePublished",
+    "hasPart": "http://schema.org/hasPart",
+    "identifier": "http://schema.org/identifier",
+    "familyName": "http://schema.org/familyName",
+    "givenName": "http://schema.org/givenName",
+    "email": "http://schema.org/email",
+    "affiliation": "http://schema.org/affiliation",
+    "contentSize": "http://schema.org/contentSize",
+    "encodingFormat": "http://schema.org/encodingFormat",
+    "fileFormat": "http://schema.org/fileFormat",
+    "endTime": "http://schema.org/endTime",
+    "object": "http://schema.org/object",
+    "agent": "http://schema.org/agent",
+    "Dataset": "http://schema.org/Dataset",
+    "Organization": "http://schema.org/Organization",
+    "Person": "http://schema.org/Person",
+    "File": "http://schema.org/MediaObject",
+    "CreateAction": "http://schema.org/CreateAction",
+    "UpdateAction": "http://schema.org/UpdateAction"
+  },
+  "@graph": [
+    {
+      "@id": "551e3a02373fb9108c3941875baae8d3",
+      "@type": "Dataset",
+      "path": "./",
+      "name": "Processed image of the Clyde Gorge",
+      "description": "Photograph of the Clyde Gorge from Mount Bushwalker processed with a neural network",
+      "dateCreated": "2018-09-21T06:20:12.371Z",
+      "datePublished": "2018-09-21T06:20:12.371Z",
+      "Publisher": {
+        "@id": "https://www.uts.edu.au/"
+      },
+      "hasPart": [
+        {
+          "@id": "clyde_inception_3b_3x3.jpg"
+        },
+        {
+          "@id": "clyde_inception_3b_3x3_reduce.jpg"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.uts.edu.au/",
+      "@type": "Organization",
+      "identifier": "https://www.uts.edu.au/",
+      "name": "University of Technology Sydney"
+    },
+    {
+      "@id": "Michael.Lynch@uts.edu.au",
+      "@type": "Person",
+      "identifier": "Michael.Lynch@uts.edu.au",
+      "name": "Michael Lynch",
+      "familyName": "Lynch",
+      "givenName": "Michael",
+      "email": "Michael.Lynch@uts.edu.au",
+      "affiliation": {
+        "@id": "https://www.uts.edu.au/"
+      }
+    },
+    {
+      "@id": "Research.Librarian@uts.edu.au",
+      "@type": "Person",
+      "email": "Research.Librarian@uts.edu.au"
+    },
+    {
+      "@id": "clyde_inception_3b_3x3.jpg",
+      "name": "clyde_inception_3b_3x3.jpg",
+      "@type": "File"
+    },
+    {
+      "@id": "clyde_inception_3b_3x3_reduce.jpg",
+      "name": "clyde_inception_3b_3x3_reduce.jpg",
+      "@type": "File"
+    },
+    {
+      "@id": "551e3a02373fb9108c3941875baae8d3_history1",
+      "@type": "CreateAction",
+      "name": "Create",
+      "description": "Data record created",
+      "endTime": "2018-09-21T06:20:12.371Z",
+      "object": {
+        "@id": "551e3a02373fb9108c3941875baae8d3"
+      },
+      "agent": {
+        "@id": "Michael.Lynch@uts.edu.au"
+      }
+    },
+    {
+      "@id": "551e3a02373fb9108c3941875baae8d3_history2",
+      "@type": "UpdateAction",
+      "name": "Publish",
+      "endTime": "2018-09-21T06:20:12.371Z",
+      "object": {
+        "@id": "551e3a02373fb9108c3941875baae8d3"
+      },
+      "agent": {
+        "@id": "Research.Librarian@uts.edu.au"
+      }
+    }
+  ]
+}
