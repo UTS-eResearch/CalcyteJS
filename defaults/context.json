@@ -2279,16 +2279,11 @@
           "yearsInOperation": "schema:yearsInOperation",
           "yield": "schema:yield",
 
-
           "contact": "schema:accountablePerson",
           "File": "schema:MediaObject",
           "path": "schema:contentUrl",
           "journal": "schema:Periodical",
-          "Project": "frapo:Project",
-          "isOutputOf": "frapo:isOutputOf",
-          "Equipment": "frapo:Equipment",
-          "interviewee": "bibo:interviewee",
-          "interviewer": "bibo:interviewer",
+     
           "hasFile": "pcdm:hasFile",
           "hasMember": "pcdm:hasMember",
           "RepositoryCollection": "pcdm:Collection",
@@ -2301,9 +2296,7 @@
           "cc": "http://creativecommons.org/ns#",
           "dct": "http://purl.org/dc/terms/",
           "foaf": "http://xmlns.com/foaf/0.1/",
-          "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-          "rdfa": "http://www.w3.org/ns/rdfa#",
-          "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-          "schema": "http://schema.org/",
-          "frapo": "http://purl.org/cerif/frapo/"
+          "rdf": "httpd://www.w3.org/1999/02/22-rdf-syntax-ns#",
+          "rdfs": "https://www.w3.org/2000/01/rdf-schema#",
+          "schema": "https://schema.org/"
 }

@@ -71,11 +71,13 @@
     {
       "@id": "clyde_inception_3b_3x3.jpg",
       "name": "clyde_inception_3b_3x3.jpg",
+      "path": "clyde_inception_3b_3x3.jpg",
       "@type": "File"
     },
     {
       "@id": "clyde_inception_3b_3x3_reduce.jpg",
       "name": "clyde_inception_3b_3x3_reduce.jpg",
+      "path": "clyde_inception_3b_3x3_reduce.jpg",
       "@type": "File"
     },
     {

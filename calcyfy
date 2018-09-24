@@ -35,16 +35,12 @@ var dirs = undefined;
 program
   .version("0.1.0")
   .description(
-    "To run calcyfy on a group of directories pass it a list of directories"
+    "Generates DataCrate HTML for CATALOG.JSON files. Pass a list of directories. To create Spreadsheet files for entring metadata use -d or -r."
   )
   .arguments("<directories...>")
   .action(function(directories) {
     dirs = directories;
   })
-  .option(
-    "-g, --generate-html",
-    'Generate HTML from a "' + catalog_file_name + '" in a directory'
-  )
   .option("-b,  --bag [bag-dir]", "Create Bagit Bag(s) under [bag-dir])")
   .option("-n,  --no", "No Citation - only applies ith --bag")
   .option(
@@ -57,13 +53,10 @@ program
     "Recurse into directories - up to " + defaults.max_depth
   )
   .option(
-    "-m, --multiple",
-    "Output multiple files instead of a single " + html_file_name
-  ).option(
     "-u, --url [distro]",
     "Distribution URL"
   );
-var depth = 1;
+var depth = 0;
 program.parse(process.argv);
 if (program.recurse) {
   depth = defaults.max_depth;
@@ -73,56 +66,110 @@ if (program.depth) {
 }
 var citer = new Datacite();
 if (!program.rawArgs.length || !dirs) program.help();
-var multiple = program.multiple;
 
 // TODO: Refactor this by if statement - there is a lot of repetition
-if (program.generateHtml) {
-  console.log("Generating html from exsiting " + catalog_file_name + " file");
+if (depth) {
+  //TODO - there is a lot of repetition here, sort it out
   dirs.forEach(function(dir) {
+    if (shell.test("-d", dir)) {
+      var c = new Collection();
+      var output_dir = dir;
+      c.read(dir, "./", undefined, depth);
+      c.to_json_ld().then(function() {
+        var text_citation;
+        var json_helper = new JSON_helper()        
+        json_helper.init(c.json_ld)  
+        var catalog_path = path.join(c.dir, defaults.catalog_json_file_name)
+        fs.writeFileSync(catalog_path, JSON.stringify(json_helper.json_ld, null, 2 ));
+        generateHTML(catalog_path);
+      });
+    }
+  });
+}
+else {
+  dirs.forEach(function(dir) {
+    var catalog_path
     if (shell.test("-d", dir)) {
       if (!path.isAbsolute(dir)) {
         dir = path.join(process.cwd(), dir);
       }
-      var catalog = path.join(dir, catalog_file_name);
+      catalog_path = path.join(dir, catalog_file_name);
     } else if (shell.test("-f", dir)) {
       if (!path.isAbsolute(dir)) {
         dir = path.join(process.cwd(), dir);
       }
-      var catalog = dir;
-      dir = path.dirname(catalog);
+      catalog_path = dir;
     }
+    generateHTML(catalog_path);
+})
+}
+
+function generateHTML(catalog_path) {
+
+console.log("Generating html from exsiting " + catalog_path  + " file");
+    if (!path.isAbsolute(catalog_path)) {
+        catalog_path = path.join(process.cwd(), catalog_path);
+    }
+    var dir = path.dirname(catalog_path)
+    var json_helper = new JSON_helper();
+    json_helper.init(require(catalog_path));
+    if (program.url){
+      if (!json_helper.root_node["distribution"]) {
+        json_helper.root_node["distribution"] = []
+      }
+      json_helper.root_node["distribution"].push(
+        {
+          "@id": program.url
+        }
+      );
+      json_helper.json_ld["@graph"].push(
+        {
+          "@id": program.url,
+          "contentUrl": program.url,
+          "@type": "DataDownload",
+          "encodingFormat": "zip"
+       });
+       json_helper.init(json_helper.json_ld);
+      }
+      
     if (program.bag) {
       //Bag the HTML
       var bagger = new Bag();
       var dest = path.join(program.bag, path.basename(dir));
       var zipname
       shell.rm("-rf", dest);
-      dir = bagger.bag(dir, program.bag);
+      dir = bagger.bag(dir, program.bag, json_helper);
+      bagger.generate_bag_info()
+      bagger.save_bag_info()
       if (!path.isAbsolute(dir)) {
         dir = path.join(process.cwd(), dir);
       }
-      catalog = path.join(dir, catalog_file_name);
+      catalog_path = path.join(dir, catalog_file_name);
       if (!program.no) {
         shell.mkdir("-p", path.join(dest, "metadata"));
         var text_citation = citer.make_citation(
-          catalog,
+          catalog_path,
           path.join(dir, "metadata", "datacite.xml")
         );
       }
     }
     var index_maker = new Index();
+    json_helper.trim_context()
     index_maker.init(
-      catalog,
+      json_helper.json_ld,
       path.join(dir),
-      multiple,
+      true,
       path.join(__dirname, "defaults/catalog_template.html")
     );
-
+   
+      
+     
     if (program.bag) {
       bagger.update();
       if (program.zip) {
         shell.cd(bagger.target_dir);
         zipname = path.join("../", path.basename(bagger.target_dir) + ".zip");
+
         shell.cd(bagger.target_dir);
         index_maker.make_index_html(text_citation, "");
 
@@ -131,85 +178,5 @@ if (program.generateHtml) {
     }
 
     index_maker.make_index_html(text_citation, zipname);
-  });
-} else {
-  //TODO - there is a lot of repetition here, sort it out
-  var zipname;
-  dirs.forEach(function(dir) {
-    if (shell.test("-d", dir)) {
-      var c = new Collection();
-      var output_dir = dir;
-      c.read(dir, "./", undefined, depth);
-      if (!path.isAbsolute(output_dir)) {
-        output_dir = path.join(process.cwd(), output_dir);
-      }
-      if (program.bag) {
-        
-        output_dir = path.join(program.bag, path.basename(dir));
-        c.bag(output_dir);
-        console.log("OUTPUT", output_dir)
-        if (!path.isAbsolute(output_dir)) {
-          output_dir = path.join(process.cwd(), output_dir);
-        }
-      }
-      c.to_json_ld().then(function() {
-        var text_citation;
-        var json_helper = new JSON_helper()
-             
-        json_helper.init(c.json_ld)
-        if (program.url){
-          if (!json_helper.root_node["distribution"]) {
-            json_helper.root_node["distribution"] = []
-          }
-          json_helper.root_node["distribution"].push(
-            {
-              "@id": program.url
-            }
-          )
-          json_helper.json_ld["@graph"].push(
-            {
-              "@id": program.url,
-              "contentUrl": program.url,
-              "@type": "DataDownload",
-              "encodingFormat": "zip"
-           }
-          )
-          // Reinitialize the helper object as we have added to the JSON
-          json_helper.init(json_helper.json_ld);
-        }   
-        json_helper.trim_context()
-        fs.writeFileSync(path.join(c.dir, defaults.catalog_json_file_name), JSON.stringify(json_helper.json_ld, null, 2 ))
-        if (program.bag) {
-          c.generate_bag_info();
-          c.save_bag_info();
-          c.update();
 
-          if (!program.no) {
-            shell.mkdir("-p", path.join(c.dir, "metadata"));
-            text_citation = citer.make_citation(
-              path.join(c.dir, defaults.catalog_json_file_name),
-              path.join(c.dir, "metadata", "datacite.xml")
-            );
-          }
-        }
-        var index_maker = new Index();
-        index_maker.init(
-          path.join(output_dir, catalog_file_name),
-          output_dir,
-          multiple,
-          path.join(__dirname, "defaults/catalog_template.html")
-        );
-
-        if (program.zip) {
-          //TODO: Refactor: This is REPEATING YOURSELF
-          shell.cd(c.dir);
-          zipname = path.join("../", path.basename(c.dir) + ".zip");
-          var zip_cmd = "zip -r " + zipname + " *";
-          index_maker.make_index_html(text_citation, "");
-          shell.exec(zip_cmd);
-        }
-        index_maker.make_index_html(text_citation, zipname);
-      });
-    }
-  });
 }
