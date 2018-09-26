@@ -76,10 +76,10 @@ if (depth) {
       var output_dir = dir;
       c.read(dir, "./", undefined, depth);
       c.to_json_ld().then(function() {
-        var text_citation;
         var json_helper = new JSON_helper()        
         json_helper.init(c.json_ld)  
         var catalog_path = path.join(c.dir, defaults.catalog_json_file_name)
+        json_helper.trim_context()
         fs.writeFileSync(catalog_path, JSON.stringify(json_helper.json_ld, null, 2 ));
         generateHTML(catalog_path);
       });
@@ -129,6 +129,8 @@ console.log("Generating html from exsiting " + catalog_path  + " file");
           "@type": "DataDownload",
           "encodingFormat": "zip"
        });
+       json_helper.json_ld["@context"]["DataDownload"] = "https://schema.org/DataDownload"
+       json_helper.json_ld["@context"]["distribution"] = "https://schema.org/distribution"
        json_helper.init(json_helper.json_ld);
       }
       
