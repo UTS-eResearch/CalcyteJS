@@ -61,6 +61,12 @@ Usage: calcyfy [options] <directories...>
 
 To run Calcyte on a group of directories pass it a list of directories
 
+To generate an HTML file for a CATALOG.json file in ./dir
+
+```
+calcyfy dir
+```
+
 One directory:
 
 ```
@@ -75,7 +81,7 @@ This will:
 All the sample directories:
 
 ```
-calcyfy test_data/*
+calcyfy -r test_data/*
 ```
 
 Calcyte will generate:
