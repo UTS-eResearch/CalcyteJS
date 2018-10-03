@@ -337,58 +337,6 @@ describe("Sample data details", function() {
   });
 });
 
-
-describe("Sample data bagged", function() {
-
-  var test_path;
-
-  before(function () { test_path = fixtures.buildup('sample') });
-  after(function() { fixtures.teardown('sample') });
-
-  it("Should create a bag", function() {
-    var c = new Collection();
-    c.read(test_path, "./", false, 1000);
-    const bag_dir = path.join(working_dir, "bags", "sample");
-    shell.rm("-rf", bag_dir);
-    shell.mkdir("-p", bag_dir);
-    c.bag(bag_dir);
-    console.log(c.collection_metadata.properties);
-
-    return c.to_json_ld().then(
-      function() {
-        //console.log("JSON-LD", JSON.stringify(c.json_ld, null, 2));
-        c.generate_bag_info();
-        c.save_bag_info();
-        assert.equal(c.bag_meta["Contact-Email"], "pt@ptsefton.com", "email");
-        assert(shell.test("-e", path.join(bag_dir, "CATALOG.json")));
-
-        assert.equal(
-          c.item_by_id["https://dx.doi.org/10.5281/zenodo.1009240"]["hasPart"]
-            .length,
-          2
-        );
-
-        assert.equal(
-          c.item_by_id["http://www.geonames.org/8152662/catalina-park.html"]
-            .name,
-          "Catalina Park"
-        );
-        //console.log("Place data", c.item_by_id["http://www.geonames.org/8152662/catalina-park.html"])
-        var catalina_location_id =
-          c.item_by_id["http://www.geonames.org/8152662/catalina-park.html"]
-            .geo["@id"];
-        var catalina_geo = c.item_by_id[catalina_location_id];
-        assert.equal(catalina_geo.latitude, "-33.7152");
-        assert.equal(catalina_geo.longitude, "150.30119");
-      },
-      function(err) {
-        console.log(err);
-      }
-    );
-  });
-});
-
-
 describe("Datacite", function() {
 
   var test_path;
