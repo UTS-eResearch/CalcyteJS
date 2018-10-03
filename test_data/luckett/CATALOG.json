@@ -5,10 +5,10 @@
     "identifier": "https://schema.org/identifier",
     "memberOf": "https://schema.org/memberOf",
     "name": "https://schema.org/name",
-    "issn": "https://schema.org/issn",
     "affiliation": "https://schema.org/affiliation",
     "familyName": "https://schema.org/familyName",
     "givenName": "https://schema.org/givenName",
+    "issn": "https://schema.org/issn",
     "contentSize": "https://schema.org/contentSize",
     "path": "https://schema.org/contentUrl",
     "creator": "https://schema.org/creator",
@@ -25,10 +25,10 @@
     "contactType": "https://schema.org/contactType",
     "email": "https://schema.org/email",
     "Organization": "https://schema.org/Organization",
-    "Periodical": "https://schema.org/Periodical",
-    "Person": "https://schema.org/Person",
-    "File": "https://schema.org/MediaObject",
     "Place": "https://schema.org/Place",
+    "Person": "https://schema.org/Person",
+    "Periodical": "https://schema.org/Periodical",
+    "File": "https://schema.org/MediaObject",
     "Dataset": "https://schema.org/Dataset",
     "ScholarlyArticle": "https://schema.org/ScholarlyArticle",
     "ContactPoint": "https://schema.org/ContactPoint"
@@ -85,6 +85,10 @@
       "name": "Ingham Institute for Applied Medical Research"
     },
     {
+      "@id": "3a31ffba-5da0-483c-819c-410328cf7406",
+      "@type": "Place"
+    },
+    {
       "@id": "4",
       "@type": "Organization",
       "address": "Liverpool NSW Austraila",
@@ -100,12 +104,6 @@
         "@id": "http://sydney.edu.au"
       },
       "name": "Sydney Medical School, The University of Sydney"
-    },
-    {
-      "@id": "5aecc8bf-142a-4a5e-bf7d-5d8277ed55b5",
-      "@type": "Periodical",
-      "issn": "1932-6203",
-      "name": "PLOS ONE"
     },
     {
       "@id": "6",
@@ -128,22 +126,28 @@
       "name": "School of Medicine and Public Health, The University of Newcastle"
     },
     {
+      "@id": "79bf604e-49bc-45ee-8cfd-53b662911d74",
+      "@type": "Person",
+      "affiliation": {
+        "@id": "1"
+      },
+      "familyName": "Cook",
+      "givenName": "Janet",
+      "name": "Janet Cook"
+    },
+    {
+      "@id": "7d0ba098-7929-431c-bec5-f8f47174f13e",
+      "@type": "Periodical",
+      "issn": "1932-6203",
+      "name": "PLOS ONE"
+    },
+    {
       "@id": "8",
       "@type": "Organization",
       "address": "St Lucia QLD Australia",
       "identifier": "8",
       "memberOf": "The University of Queensland",
       "name": "Faculty of Medicine, The University of Queensland"
-    },
-    {
-      "@id": "8758065f-f02c-48d7-870a-77ad78971b5e",
-      "@type": "Person",
-      "affiliation": {
-        "@id": "10"
-      },
-      "familyName": "Houltram",
-      "givenName": "Jennifer",
-      "name": "Jennifer Houltram"
     },
     {
       "@id": "9",
@@ -154,16 +158,6 @@
         "@id": "http://www.jhu.edu"
       },
       "name": "School of Nursing, Johns Hopkins University"
-    },
-    {
-      "@id": "9944042a-01e9-498d-bf74-1b5c8dfb20bf",
-      "@type": "Person",
-      "affiliation": {
-        "@id": "1"
-      },
-      "familyName": "Cook",
-      "givenName": "Janet",
-      "name": "Janet Cook"
     },
     {
       "@id": "Data files associated with the IDEAL primary outcome manuscript.docx",
@@ -216,8 +210,14 @@
       "name": "Dataset 3"
     },
     {
-      "@id": "a978970a-c2f6-4847-abac-c2085d08fdf2",
-      "@type": "Place"
+      "@id": "d0784b0a-8910-4cd2-8eab-c7d90a145ab9",
+      "@type": "Person",
+      "affiliation": {
+        "@id": "10"
+      },
+      "familyName": "Houltram",
+      "givenName": "Jennifer",
+      "name": "Jennifer Houltram"
     },
     {
       "@id": "http://doi.org/10.4225/59/59672c09f4a4b",
@@ -255,13 +255,13 @@
           "@id": "http://nla.gov.au/nla.party-1509834"
         },
         {
-          "@id": "9944042a-01e9-498d-bf74-1b5c8dfb20bf"
+          "@id": "79bf604e-49bc-45ee-8cfd-53b662911d74"
         },
         {
           "@id": "http://orcid.org/0000-0003-4902-0654"
         },
         {
-          "@id": "8758065f-f02c-48d7-870a-77ad78971b5e"
+          "@id": "d0784b0a-8910-4cd2-8eab-c7d90a145ab9"
         },
         {
           "@id": "http://orcid.org/0000-0001-6611-6565"
@@ -337,13 +337,13 @@
           "@id": "http://nla.gov.au/nla.party-1509834"
         },
         {
-          "@id": "9944042a-01e9-498d-bf74-1b5c8dfb20bf"
+          "@id": "79bf604e-49bc-45ee-8cfd-53b662911d74"
         },
         {
           "@id": "http://orcid.org/0000-0003-4902-0654"
         },
         {
-          "@id": "8758065f-f02c-48d7-870a-77ad78971b5e"
+          "@id": "d0784b0a-8910-4cd2-8eab-c7d90a145ab9"
         },
         {
           "@id": "http://orcid.org/0000-0001-6611-6565"
@@ -355,7 +355,7 @@
       "datePublished": "2017",
       "identifier": "http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0181020",
       "isPartOf": {
-        "@id": "5aecc8bf-142a-4a5e-bf7d-5d8277ed55b5"
+        "@id": "7d0ba098-7929-431c-bec5-f8f47174f13e"
       },
       "name": "Effects of facilitated family case conferencing for advanced dementia: A cluster randomised clinical trial"
     },

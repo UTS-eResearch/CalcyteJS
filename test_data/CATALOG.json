@@ -1,131 +1,131 @@
-{
+`{
   "@graph": [
     {
       "Title": "SUSS Repository",
       "Description": "Caves data repository",
       "ID": "suss_repo",
-      "schema:hasPart": [
+      "https://schema.org/hasPart": [
         {
           "@id": "#6ed61bd4-db23-4902-9fa4-ea1cf85f0540",
           "License": "CC-BY",
-          "@type": "schema:MediaObject",
+          "@type": "https://schema.org/MediaObject",
           "Description": "Illustrator file for Glop Pot"
         },
         {
           "@id": "#e383f498-a0f5-46c7-b813-57fcc09a3fa2",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#a5a64d79-18d4-40e3-b220-31d6066ea07f",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#a4902d91-8a24-4777-af11-dc3fb2dfa954",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#437bf884-002f-4c4d-bb3a-94729e69d023",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#39030787-1ae2-4637-b90e-d63710ae2920",
           "License": "",
-          "@type": "schema:MediaObject",
+          "@type": "https://schema.org/MediaObject",
           "Description": "Directory of scanned sketch sheets"
         },
         {
           "@id": "#6bba0983-a2ce-4da2-8c9b-4e239a4fe05b",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#868d5f90-10ea-4b87-9e27-82dfe836ed52",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#169de668-5265-4938-9088-46559d866614",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#a4272354-5615-4ca2-8586-63e3c0ffbb75",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#7c6916c3-f9de-4438-864a-17add42f7579",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#b16c715b-8259-4611-b19b-a55373884b9c",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#91739efe-1d39-409f-a149-90317e255834",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#f9abf6cd-8c6a-447c-816d-e6c25f8890f8",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#5533095d-887c-4f68-b8bd-809a23fce87a",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#560a5f31-bc91-42c7-ad77-4f0fee9ed3d5",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#398e31d7-6699-4605-888f-ec40f57eabe5",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#e9c00dd0-5e30-4b41-8a5c-7ae0417b2de0",
           "License": "",
-          "@type": "schema:MediaObject",
+          "@type": "https://schema.org/MediaObject",
           "Description": "Directory of scanned data sheets"
         },
         {
           "@id": "#53123b45-6a6f-4c4d-8ecd-d17071560bd6",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#eeb524a2-7572-4cbc-9bfa-b77f3d38c592",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#b3156bbe-df7b-4fc4-973d-59575cd9a320",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#087da45c-a4c5-4f9e-b2b2-74dfe4ace1a5",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#e6751c56-42c7-42bb-9c99-84a36b99845a",
           "License": "",
-          "@type": "schema:MediaObject",
+          "@type": "https://schema.org/MediaObject",
           "Description": "Directory of ASF Grade specifications for Survex software"
         },
         {
           "@id": "#0e45b3b9-cc65-4a1a-8e1f-45fc937d471e",
           "License": "CC-BY",
-          "@type": "schema:MediaObject",
+          "@type": "https://schema.org/MediaObject",
           "Description": "Survex data file for Glop Pot"
         },
         {
           "@id": "#3e334e85-2158-46d6-89bd-7579d38bcb24",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#1e218303-e8b9-4bca-929f-f2d883d42b32",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#589063f6-967f-4da3-a1ad-4a4b62062c69",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         },
         {
           "@id": "#fc7aa0b4-0ad7-41e3-ba72-8bc3c45d44a3",
-          "@type": "schema:MediaObject"
+          "@type": "https://schema.org/MediaObject"
         }
       ],
       "@id": "#suss_repo",
@@ -133,47 +133,46 @@
     }
   ],
   "@context": {
-    "Title": "schema:name",
-    "ID": "schema:identifier",
-    "Funder": "schema:funder",
-    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "geo": "schema:geo",
-    "Contributor": "schema:contributor",
-    "vivo": "http://vivoweb.org/ontology/core#",
+    "Title": "https://schema.org/name",
+    "ID": "https://schema.org/identifier",
+    "Funder": "https://schema.org/funder",
+    "rdf": "https://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "geo": "https://schema.org/geo",
+    "Contributor": "https://schema.org/contributor",
+    "vivo": "https://vivoweb.org/ontology/core#",
     "HasFile": "pcdm:hasFile",
-    "FamilyName": "schema:familyName",
-    "Box": "schema:Box",
-    "License": "schema:license",
-    "fileFormat": "schema:fileFormat",
-    "foaf": "http://xmlns.com/foaf/0.1/",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "cc": "http://creativecommons.org/ns#",
-    "Person": "schema:person",
-    "ContentLocation": "schema:contentLocation",
-    "rdfa": "http://www.w3.org/ns/rdfa#",
-    "Identifier": "schema:Identifier",
-    "Dataset": "schema:Dataset",
-    "GeoShape": "schema:GeoShape",
-    "SpatialCoverage": "schema:spatialCoverage",
-    "Subject": "schema:subject",
-    "ContactPerson": "schema:accountablePerson",
-    "Description": "schema:description",
-    "Email": "schema:email",
+    "FamilyName": "https://schema.org/familyName",
+    "Box": "https://schema.org/Box",
+    "License": "https://schema.org/license",
+    "fileFormat": "https://schema.org/fileFormat",
+    "foaf": "https://xmlns.com/foaf/0.1/",
+    "rdfs": "https://www.w3.org/2000/01/rdf-schema#",
+    "cc": "https://creativecommons.org/ns#",
+    "Person": "https://schema.org/person",
+    "ContentLocation": "https://schema.org/contentLocation",
+    "rdfa": "https://www.w3.org/ns/rdfa#",
+    "Identifier": "https://schema.org/Identifier",
+    "Dataset": "https://schema.org/Dataset",
+    "GeoShape": "https://schema.org/GeoShape",
+    "SpatialCoverage": "https://schema.org/spatialCoverage",
+    "Subject": "https://schema.org/subject",
+    "ContactPerson": "https://schema.org/accountablePerson",
+    "Description": "https://schema.org/description",
+    "Email": "https://schema.org/email",
     "Project": "vivo:Project",
-    "TemporalCoverage": "schema:TemporalCoverage",
-    "Latitude": "schema:latitude",
+    "TemporalCoverage": "https://schema.org/TemporalCoverage",
+    "Latitude": "https://schema.org/latitude",
     "Object": "pcdm:object",
-    "GeoCoordinates": "schema:GeoCoordinates",
-    "schema": "http://schema.org/",
-    "Creator": "schema:creator",
+    "GeoCoordinates": "https://schema.org/GeoCoordinates",
+    "Creator": "https://schema.org/creator",
     "MemberOf": "pcdm:memberOf",
-    "GivenName": "schema:givenName",
-    "Keywords": "schema:keywords",
-    "CreativeWork": "schema:CreativeWork",
-    "Phone": "schema:telephone",
-    "Place": "schema:Place",
-    "Longitude": "schema:longitude",
-    "dct": "http://purl.org/dc/terms/",
-    "pcdm": "http://pcdm.org/models#"
+    "GivenName": "https://schema.org/givenName",
+    "Keywords": "https://schema.org/keywords",
+    "CreativeWork": "https://schema.org/CreativeWork",
+    "Phone": "https://schema.org/telephone",
+    "Place": "https://schema.org/Place",
+    "Longitude": "https://schema.org/longitude",
+    "dct": "https://purl.org/dc/terms/",
+    "pcdm": "https://pcdm.org/models#"
   }
 }

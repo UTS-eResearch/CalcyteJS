@@ -30,8 +30,8 @@ function set_up_a_dir(test_dir = default_test_dir) {
   return test_dir;
 }
 
-describe("Create an Datactite citation", function() {
-  it("Should create an citation", function(done) {
+describe("Create a Datactite citation", function() {
+  it("Should create a citation", function(done) {
     //
     set_up_a_dir();
     citer = new Datacite();
