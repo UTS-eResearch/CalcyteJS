@@ -48,10 +48,8 @@ program
     "Create a zipped version of the bag - only applies with --bag"
   )
   .option("-d,  --depth", "Maximum depth to recurse into directories")
-  .option(
-    "-r,  --recurse",
-    "Recurse into directories - up to " + defaults.max_depth
-  )
+  .option("-r,  --recurse", "Recurse into directories looking for CATALOG_.xslc files")
+
   .option(
     "-u, --url [distro]",
     "Distribution URL"
@@ -111,6 +109,7 @@ console.log("Generating html from exsiting " + catalog_path  + " file");
         catalog_path = path.join(process.cwd(), catalog_path);
     }
     var dir = path.dirname(catalog_path)
+    shell.rm("-rf", path.join(dir, "CATALOG_files"));
     var json_helper = new JSON_helper();
     json_helper.init(require(catalog_path));
     if (program.url){

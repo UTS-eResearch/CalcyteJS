@@ -98,7 +98,7 @@ describe("JSON-LD helper simple tests", function () {
     json_content = JSON.parse(fs.readFileSync(catalog));
     const helper3 = new jsonld()
     helper3.init(json_content)
-    //assert.equal(helper3.get_uri_for_term("Person"), "https://schema.org/Person")
+    //assert.equal(helper3.get_uri_for_term("Person"), "http://schema.org/Person")
     helper3.trim_context()
     assert.equal(Object.keys(helper3.json_ld["@context"]).length, 29)
 
@@ -116,7 +116,7 @@ describe("JSON-LD helper simple tests", function () {
     
     helper.init(json4)
     helper.trim_context()
-    assert.equal(helper.get_uri_for_term("DataDownload"), "https://schema.org/DataDownload");
+    assert.equal(helper.get_uri_for_term("DataDownload"), "http://schema.org/DataDownload");
 
 
     done();

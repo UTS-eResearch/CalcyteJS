@@ -30,16 +30,5 @@ function set_up_a_dir(test_dir = default_test_dir) {
   return test_dir;
 }
 
-describe("Create a Datactite citation", function() {
-  it("Should create a citation", function(done) {
-    //
-    set_up_a_dir();
-    citer = new Datacite();
-    text_citation = citer.make_citation(
-      "../test_data/sample_CATALOG.json",
-      "../test_data/metadata/datacite.xml"
-    );
-    assert.equal(text_citation, text_citation_1);
-    done();
-  });
-});
+
+// This is really bad - but we have no proper test at the moment

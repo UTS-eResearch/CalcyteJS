@@ -27,7 +27,7 @@ describe("Simple ID", function() {
     f.parse("ID", "https://orcid.org/something");
     assert(f.is_id);
     assert.equal(f.data[0], "https://orcid.org/something");
-    assert.equal(f.property_URI, "https://schema.org/identifier");
+    assert.equal(f.property_URI, "http://schema.org/identifier");
     done();
   });
 });
@@ -45,7 +45,7 @@ describe("File Format", function() {
       f.links_to,
       "http://www.nationalarchives.gov.uk/PRONOM/fmt/43"
     );
-    assert.equal(f.property_URI, "https://schema.org/fileFormat");
+    assert.equal(f.property_URI, "http://schema.org/fileFormat");
     done();
   });
 });
@@ -55,7 +55,7 @@ describe("Repeating names", function() {
     var f = new Property();
     f.parse("RELATION:Creator*", "Mike Lake, Peter Sefton, Michael Lynch");
     assert(f.is_repeating);
-    assert.equal(f.property_URI, "https://schema.org/creator");
+    assert.equal(f.property_URI, "http://schema.org/creator");
     assert.equal(f.name, "creator");
     assert.equal(f.data[0], "Mike Lake");
     assert.equal(f.data[1], "Peter Sefton");
@@ -69,7 +69,7 @@ describe("Escaping HTML", function() {
     var f = new Property();
     f.parse("RELATION:Creator*", "Mike Lake & Peter Sefton & Michael Lynch");
     assert(f.is_repeating);
-    assert.equal(f.property_URI, "https://schema.org/creator");
+    assert.equal(f.property_URI, "http://schema.org/creator");
     assert.equal(f.name, "creator");
     assert.equal(f.data[0], "Mike Lake & Peter Sefton & Michael Lynch");
     done();
@@ -97,13 +97,13 @@ describe("Nested", function() {
 
     
     //console.log("SPILT TEST", "This:http://B;ah.asdsad.asdasd".split(":",2));
-    assert.equal(f.property_URI, "https://schema.org/creator");
+    assert.equal(f.property_URI, "http://schema.org/creator");
 
     f.parse(
       "distribution>TYPE:DataDownload>",
       "contentUrl: ./"
     );
-    assert.equal(f.property_URI, "https://schema.org/distribution");
+    assert.equal(f.property_URI, "http://schema.org/distribution");
     console.log(f.nested_item_json);
 
     done();

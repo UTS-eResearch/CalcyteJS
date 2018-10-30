@@ -62,18 +62,18 @@ describe("Test helper functions", function() {
 
     assert.equal(
       index_maker.get_href("http://orcid.org/0000-0002-3545-944X", "http://dx.doi.org/10.5281/zenodo.1009240" ),
-      "CATALOG_files/pairtree_root/ht/tp/+=/=o/rc/id/,o/rg/=0/00/0-/00/02/-3/54/5-/94/4X/index.html"
+      "CATALOG_files/8998f8b4/885ba8f4/7d9b9bac/ef466c98/5d56f099/index.html"
     );
 
 
     assert.equal(
       index_maker.get_href("http://dx.doi.org/10.5281/zenodo.1009240", "http://orcid.org/0000-0002-3545-944X" ),
-      "../../../../../../../../../../../../../../../../../../../../CATALOG.html"
+      "../../../../../../CATALOG.html"
     );
 
     assert.equal(
       index_maker.get_href("http://orcid.org/0000-0002-3545-944X", "http://n2t.info/urn:nbn:se:kb:repos-1" ),
-      "../../../../../../../../../../../../../../../../=o/rc/id/,o/rg/=0/00/0-/00/02/-3/54/5-/94/4X/index.html"
+      "../../../../../8998f8b4/885ba8f4/7d9b9bac/ef466c98/5d56f099/index.html"
     );
 
     assert.equal(

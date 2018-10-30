@@ -24,7 +24,6 @@ var fs = require("fs");
 var path = require("path");
 const XLSX = require("xlsx");
 const Datacite = require("../lib/datacite.js");
-
 const fixtures = require("./fixtures");
 
 
@@ -90,8 +89,8 @@ describe("Create a CATALOG", function() {
     return c.to_json_ld().then(
       function() {
         //console.log(JSON.stringify(c.json_ld, null, 2));
-        assert.equal(c.item_by_id["./"]["hasPart"].length, 11);
-        assert(!c.item_by_id["./1.pdf"]);
+        assert.equal(c.item_by_url["./"]["hasPart"].length, 11);
+        assert(!c.item_by_id["1.pdf"]);
         assert(c.item_by_id["1.sh"]);
       },
       function(err) {
@@ -228,16 +227,15 @@ describe("Glop Plot data", function() {
         const items = c.item_by_id[
          "https://dx.doi.org/10.1016/this_is_an_example_not_a_real_DOI"
         ]["hasPart"];
-        console.log(items);
         assert.equal(
           items.length,
           5, 
           "Expected 5 items in " + JSON.stringify(items)
         );
+        
         assert.equal(c.item_by_url["sketchsheets"]["hasPart"].length, 3);
-        //console.log("IDS", c.item_by_url["sketchsheets"]["hasPart"]);
+        console.log("IDS", c.item_by_id);
         var a_file = c.item_by_id["sketchsheets/CP7Glopsketch01.jpg"];
-        console.log("*** " + JSON.stringify(a_file));
         assert.equal(a_file.contentSize, "179640");
         assert.equal(a_file.encodingFormat, "JPEG File Interchange Format");
         assert.equal(
