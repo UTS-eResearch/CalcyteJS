@@ -85,7 +85,7 @@ describe("JSON-LD helper simple tests", function () {
     
     const helper2 = new jsonld()
     helper2.init(json_content)
-    console.log("Looking up name", helper2.get_uri_for_term("foaf:name"))
+    //console.log("Looking up name", helper2.get_uri_for_term("foaf:name"))
     assert.equal(helper2.get_uri_for_term("foaf:name"), "http://xmlns.com/foaf/0.1/name")
     assert.equal(helper2.get_uri_for_term("picture"), "http://xmlns.com/foaf/0.1/depiction")
     assert.equal(helper2.get_uri_for_term("foaf:homepage"), "http://xmlns.com/foaf/0.1/homepage")
