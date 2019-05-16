@@ -104,7 +104,7 @@ else {
 
 function generateHTML(catalog_path) {
 
-console.log("Generating html from exsiting " + catalog_path  + " file");
+console.log("Generating html from existing " + catalog_path  + " file");
     if (!path.isAbsolute(catalog_path)) {
         catalog_path = path.join(process.cwd(), catalog_path);
     }
