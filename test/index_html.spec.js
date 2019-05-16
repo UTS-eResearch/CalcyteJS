@@ -24,6 +24,7 @@ const text_citation_1 =
   "Peter Sefton (2017) Sample dataset for DataCrate v0.2. University of Technology Sydney. Datacrate. http://dx.doi.org/10.5281/zenodo.1009240";
 const assert = require("assert");
 
+
 function set_up_a_dir(test_dir = default_test_dir) {
   // Set up a test directory with some files.
   shell.rm("-rf", test_dir);

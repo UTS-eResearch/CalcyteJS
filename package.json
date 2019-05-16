@@ -16,6 +16,8 @@
     "mocha": "^4.1.0"
   },
   "dependencies": {
+    "chai": "^4.2.0",
+    "chai-fs": "^2.0.0",
     "cheerio": "^1.0.0-rc.2",
     "ejs": "^2.5.7",
     "filesize": "^3.6.1",

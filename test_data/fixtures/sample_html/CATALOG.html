@@ -1,0 +1,526 @@
+
+
+<html>
+<head>
+  <style>
+
+  table {
+      width: 90%;
+      text-align: left;
+      vertical-align: top;
+      margin-bottom: 2em;
+  }
+  td {
+      margin-right: 2em;
+      white-space: normal;
+    
+  }
+  details {
+    margin-left: 2em;
+  }
+
+  .break {
+
+   word-break: break-all;
+  }
+
+  div.collection {
+      margin-left: +1em;
+  }
+  </style>
+  
+  <script type="application/ld+json">
+   
+    {
+  "@context": {
+    "latitude": "http://schema.org/latitude",
+    "longitude": "http://schema.org/longitude",
+    "description": "http://schema.org/description",
+    "identifier": "http://schema.org/identifier",
+    "name": "http://schema.org/name",
+    "dC:CREATOR": "nullCREATOR",
+    "contact": "http://schema.org/accountablePerson",
+    "contentLocation": "http://schema.org/contentLocation",
+    "path": "http://schema.org/contentUrl",
+    "contributor": "http://schema.org/contributor",
+    "creator": "http://schema.org/creator",
+    "datePublished": "http://schema.org/datePublished",
+    "hasPart": "http://schema.org/hasPart",
+    "keywords": "http://schema.org/keywords",
+    "publisher": "http://schema.org/publisher",
+    "temporalCoverage": "http://schema.org/temporalCoverage",
+    "affiliation": "http://schema.org/affiliation",
+    "email": "http://schema.org/email",
+    "geo": "http://schema.org/geo",
+    "funder": "http://schema.org/funder",
+    "contentSize": "http://schema.org/contentSize",
+    "encodingFormat": "http://schema.org/encodingFormat",
+    "fileFormat": "http://schema.org/fileFormat",
+    "license": "http://schema.org/license",
+    "relation:Contributor": "nullContributor",
+    "GeoCoordinates": "http://schema.org/GeoCoordinates",
+    "Dataset": "http://schema.org/Dataset",
+    "Person": "http://schema.org/Person",
+    "Place": "http://schema.org/Place",
+    "Project": "nullProject"
+  },
+  "@graph": [
+    {
+      "@id": "263e4cc5-37e6-4bee-a8cd-893e42bec48b",
+      "@type": "GeoCoordinates",
+      "latitude": "-33.7152",
+      "longitude": "150.30119",
+      "@reverse": {
+        "geo": [
+          {
+            "@id": "http://www.geonames.org/8152662/catalina-park.html"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "EPL1",
+      "description": "Olympus camera with Panasonic 20mm lens",
+      "identifier": "EPL1",
+      "name": "EPL1 Camera",
+      "@type": [
+        "Thing"
+      ]
+    },
+    {
+      "@id": "http://dx.doi.org/10.1000/123456",
+      "@type": "ScholarlyWork",
+      "dC:CREATOR": "Peter Sefton",
+      "identifier": "http://dx.doi.org/10.1000/123456",
+      "name": "This is an example publication with a dodgy DOI"
+    },
+    {
+      "@id": "http://dx.doi.org/10.5281/zenodo.1009240",
+      "@type": "Dataset",
+      "contact": {
+        "@id": "http://orcid.org/0000-0002-3545-944X"
+      },
+      "contentLocation": {
+        "@id": "http://www.geonames.org/8152662/catalina-park.html"
+      },
+      "path": "./",
+      "contributor": {
+        "@id": "https://github.com/UTS-eResearch/datacrate"
+      },
+      "creator": {
+        "@id": "http://orcid.org/0000-0002-3545-944X"
+      },
+      "datePublished": "2017-06-29",
+      "description": "This is a simple dataset for demonstration purposes it contains just one image and a directory full of useless text files.",
+      "hasPart": [
+        {
+          "@id": "lots_of_little_files"
+        },
+        {
+          "@id": "pics"
+        }
+      ],
+      "identifier": [],
+      "keywords": "Dogs, Fences, The Gully",
+      "name": "Sample dataset for DataCrate v0.2",
+      "publisher": {
+        "@id": "http://uts.edu.au"
+      },
+      "temporalCoverage": "2017"
+    },
+    {
+      "@id": "http://orcid.org/0000-0002-3545-944X",
+      "@type": "Person",
+      "affiliation": {
+        "@id": "http://uts.edu.au"
+      },
+      "email": "pt@ptsefton.com",
+      "identifier": "http://orcid.org/0000-0002-3545-944X",
+      "name": "Peter Sefton",
+      "@reverse": {
+        "contact": [
+          {
+            "@id": "http://dx.doi.org/10.5281/zenodo.1009240"
+          }
+        ],
+        "creator": [
+          {
+            "@id": "http://dx.doi.org/10.5281/zenodo.1009240"
+          },
+          {
+            "@id": "pics/19093074_10155469333581584_5707039334816454031_o.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "http://uts.edu.au",
+      "@type": "Organisation",
+      "identifier": "http://uts.edu.au",
+      "name": "University of Technology Sydney",
+      "@reverse": {
+        "publisher": [
+          {
+            "@id": "http://dx.doi.org/10.5281/zenodo.1009240"
+          }
+        ],
+        "affiliation": [
+          {
+            "@id": "http://orcid.org/0000-0002-3545-944X"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "http://www.geonames.org/8152662/catalina-park.html",
+      "@type": "Place",
+      "description": "Catalina Park is a disused motor racing venue, located at Katoomba, in the Blue Mountains, New South Wales, Australia, and is recognised as an Aboriginal Place due to the long association of the local Gundungarra and Darug clans to the area.",
+      "geo": {
+        "@id": "263e4cc5-37e6-4bee-a8cd-893e42bec48b"
+      },
+      "identifier": "http://www.geonames.org/8152662/catalina-park.html",
+      "name": "Catalina Park",
+      "@reverse": {
+        "contentLocation": [
+          {
+            "@id": "http://dx.doi.org/10.5281/zenodo.1009240"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
+      "description": "Attribution-NonCommercial-ShareAlike 3.0 Australia (CC BY-NC-SA 3.0 AU)\r\n\r\nThis is a human-readable summary of (and not a substitute for) the license. Disclaimer.\r\n\r\n\r\n\r\nYou are free to:\r\n\r\n\r\n\r\nShare — copy and redistribute the material in any medium or format\r\n\r\nAdapt — remix, transform, and build upon the material\r\n\r\nThe licensor cannot revoke these freedoms as long as you follow the license terms.\r\n\r\nUnder the following terms:\r\n\r\n\r\n\r\nAttribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\r\n\r\nNon-Commercial — You may not use the material for commercial purposes.\r\n\r\nShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.\r\n\r\nNo additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.",
+      "identifier": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
+      "name": "CC BY-NC-SA 3.0 AU",
+      "@type": [
+        "Thing"
+      ],
+      "@reverse": {
+        "license": [
+          {
+            "@id": "pics/19093074_10155469333581584_5707039334816454031_o.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://github.com/UTS-eResearch/datacrate",
+      "@type": "Project",
+      "description": "The DataCrate project is to write the spec for DataCrate, of which this is an example.",
+      "funder": "UTS",
+      "identifier": "https://github.com/UTS-eResearch/datacrate",
+      "name": "DataCrate",
+      "@reverse": {
+        "contributor": [
+          {
+            "@id": "http://dx.doi.org/10.5281/zenodo.1009240"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "lots_of_little_files",
+      "@type": "Dataset",
+      "path": "lots_of_little_files",
+      "description": "This directory contains many small files, that we’re not going to describe in detail.",
+      "identifier": "lots_of_little_files",
+      "name": "Too many files",
+      "isPartOf": [
+        {
+          "@id": "http://dx.doi.org/10.5281/zenodo.1009240"
+        }
+      ]
+    },
+    {
+      "@id": "pics",
+      "@type": "Dataset",
+      "path": "pics",
+      "description": "This directory contains the images for the research project",
+      "hasPart": [
+        {
+          "@id": "pics/19093074_10155469333581584_5707039334816454031_o.jpg"
+        },
+        {
+          "@id": "pics/CATALOG_pics.xlsx"
+        }
+      ],
+      "identifier": "pics",
+      "name": "Pictures",
+      "isPartOf": [
+        {
+          "@id": "http://dx.doi.org/10.5281/zenodo.1009240"
+        }
+      ]
+    },
+    {
+      "@id": "pics/19093074_10155469333581584_5707039334816454031_o.jpg",
+      "@type": "File",
+      "contentSize": "132765",
+      "path": "pics/19093074_10155469333581584_5707039334816454031_o.jpg",
+      "creator": {
+        "@id": "http://orcid.org/0000-0002-3545-944X"
+      },
+      "description": "This is a photo of a dog, and a fence.",
+      "encodingFormat": "JPEG File Interchange Format",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/44",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/"
+      },
+      "relation:Contributor": "EPL1",
+      "isPartOf": [
+        {
+          "@id": "pics"
+        }
+      ]
+    },
+    {
+      "@id": "pics/CATALOG_pics.xlsx",
+      "@type": "File",
+      "contentSize": "16875",
+      "path": "pics/CATALOG_pics.xlsx",
+      "encodingFormat": "Microsoft Excel Non-XML Binary Workbook",
+      "fileFormat": "http://www.nationalarchives.gov.uk/PRONOM/fmt/595",
+      "isPartOf": [
+        {
+          "@id": "pics"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+<link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"/>
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta charset='utf-8'/>
+
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+
+    <ul class="nav navbar-nav" >
+     <li >
+    <a href="" class="active"><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"></span>&nbsp;Sample dataset for DataCrate v0.2</button></a></li>
+ </ul>
+
+  </nav>
+<div class="container">
+<div class="jumbotron">
+<h3>Sample dataset for DataCrate v0.2</h3>
+<h4></h4>
+</div>
+
+
+
+
+<p>A machine-readable version of this page, created at 2019-05-16T03:05:38.521Z is available <a href='CATALOG.json'>CATALOG.json</a></p> 
+
+
+<table class = 'table' id = 'http://dx.doi.org/10.5281/zenodo.1009240'
+><hr
+><tr
+><th style = 'white-space: nowrap; width: 1%;'
+>@id</th
+><td
+><a href = 'http://dx.doi.org/10.5281/zenodo.1009240' class = 'fa fa-external-link' title = 'Sample dataset for DataCrate v0.2'
+>http://dx.doi.org/10.5281/zenodo.1009240</a
+></td
+></tr
+><tr
+><th
+><span
+>name<sup
+><a href = 'http://schema.org/name' title = 'Definition of: name'
+>?</a
+></sup
+></span
+></th
+><td
+><b
+>Sample dataset for DataCrate v0.2</b
+></td
+></tr
+><tr
+><th
+>@type</th
+><td
+><span
+>Dataset<sup
+><a href = 'http://schema.org/Dataset' title = 'Definition of: Dataset'
+>?</a
+></sup
+></span
+></td
+></tr
+><tr
+><th
+><span
+>description<sup
+><a href = 'http://schema.org/description' title = 'Definition of: description'
+>?</a
+></sup
+></span
+></th
+><td
+>This is a simple dataset for demonstration purposes it contains just one image and a directory full of useless text files.</td
+></tr
+><tr
+><th
+><span
+>datePublished<sup
+><a href = 'http://schema.org/datePublished' title = 'Definition of: datePublished'
+>?</a
+></sup
+></span
+></th
+><td
+>2017-06-29</td
+></tr
+><tr
+><th
+><span
+>creator<sup
+><a href = 'http://schema.org/creator' title = 'Definition of: creator'
+>?</a
+></sup
+></span
+></th
+><td
+><a href = 'CATALOG_files/8998f8b4/885ba8f4/7d9b9bac/ef466c98/5d56f099/index.html'
+>Peter Sefton</a
+></td
+></tr
+><tr
+><th
+><span
+>path<sup
+><a href = 'http://schema.org/contentUrl' title = 'Definition of: path'
+>?</a
+></sup
+></span
+></th
+><td
+><a href = './'
+>.</a
+></td
+></tr
+><tr
+><th
+><span
+>contact<sup
+><a href = 'http://schema.org/accountablePerson' title = 'Definition of: contact'
+>?</a
+></sup
+></span
+></th
+><td
+><a href = 'CATALOG_files/8998f8b4/885ba8f4/7d9b9bac/ef466c98/5d56f099/index.html'
+>Peter Sefton</a
+></td
+></tr
+><tr
+><th
+><span
+>contentLocation<sup
+><a href = 'http://schema.org/contentLocation' title = 'Definition of: contentLocation'
+>?</a
+></sup
+></span
+></th
+><td
+><a href = 'CATALOG_files/712d9b65/385f61c7/e479f378/ee180b11/8aa594bd/index.html'
+>Catalina Park</a
+></td
+></tr
+><tr
+><th
+><span
+>contributor<sup
+><a href = 'http://schema.org/contributor' title = 'Definition of: contributor'
+>?</a
+></sup
+></span
+></th
+><td
+><a href = 'CATALOG_files/0461c34e/ffa6a98c/28a9b2d1/0227e824/712e75b5/index.html'
+>DataCrate</a
+></td
+></tr
+><tr
+><th
+><span
+>hasPart<sup
+><a href = 'http://schema.org/hasPart' title = 'Definition of: hasPart'
+>?</a
+></sup
+></span
+></th
+><td
+><ul
+><li
+><a href = 'CATALOG_files/35f968df/ef529d0e/131b9056/5bf4ad97/11d6125b/index.html'
+>Too many files</a
+></li
+><li
+><a href = 'CATALOG_files/424b2275/10f8c2cb/4b77b71f/fb29bed1/09810498/index.html'
+>Pictures</a
+></li
+></ul
+></td
+></tr
+><tr
+><th
+><span
+>keywords<sup
+><a href = 'http://schema.org/keywords' title = 'Definition of: keywords'
+>?</a
+></sup
+></span
+></th
+><td
+>Dogs, Fences, The Gully</td
+></tr
+><tr
+><th
+><span
+>publisher<sup
+><a href = 'http://schema.org/publisher' title = 'Definition of: publisher'
+>?</a
+></sup
+></span
+></th
+><td
+><a href = 'CATALOG_files/eae59000/65f4411a/32896a2a/b41ec011/341eb586/index.html'
+>University of Technology Sydney</a
+></td
+></tr
+><tr
+><th
+><span
+>temporalCoverage<sup
+><a href = 'http://schema.org/temporalCoverage' title = 'Definition of: temporalCoverage'
+>?</a
+></sup
+></span
+></th
+><td
+>2017</td
+></tr
+></table
+>
+
+<p>This file was created at 2019-05-16T03:09:09.491Z by
+<a href='https://code.research.uts.edu.au/eresearch/calcytejs'>
+Calcyte</a> which implements the <a href='https://github.com/UTS-eResearch/datacrate/blob/master/spec/1.0/data_crate_specification_v1.0.md'>
+Draft DataCrate Packaging format</a>, version 1.0
+ </p>
+
+
+</body>
+</html>
