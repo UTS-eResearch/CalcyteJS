@@ -29,6 +29,7 @@ const expect = chai.expect;
 const DEFAULT_TEST_DIR = "test_output";
 const SAMPLE_DIR = path.join(DEFAULT_TEST_DIR, "sample_multi");
 const SAMPLE_CATALOG = "test_data/sample_CATALOG.json";
+const FIXTURE = "test_data/fixtures/sample_html";
 const text_citation_1 =
   "Peter Sefton (2017) Sample dataset for DataCrate v0.2. University of Technology Sydney. Datacrate. http://dx.doi.org/10.5281/zenodo.1009240";
 const assert = require("assert");
@@ -43,76 +44,55 @@ describe("Test sync creation of multi-file html", function() {
   })
 
 
-    // Multi page version
+
+  it("Can generate multi-page CATALOG.html files", function() {
+    var index_maker = new Index();
+
     index_maker.init(
-      "../test_data/sample_CATALOG.json",
-      "./test/test_output/index.html",
+      path.join("..", SAMPLE_CATALOG),
+      SAMPLE_DIR,
       true
     );
 
+    // this is sync
 
-
-
-
-});
-
-describe("Test async creation of single CATALOG.html", function() {
-
-  before(async function() {
-    await fs.remove(DEFAULT_TEST_DIR);
-    await fs.ensureDir(DEFAULT_TEST_DIR);
-  })
-
-
-  it("Can generate a single-page CATALOG.html", async function() {
-    var index_maker = new Index();
-
-    var template_ejs = await fs.readFile(defaults.catalog_template);
-    var catalog_json = await fs.readJson(SAMPLE_CATALOG);
-
-    index_maker.init_pure({
-      catalog_json: catalog_json,
-      template: template_ejs,
-      multiple_files: false
-    });
-
-    assert.equal(
-      index_maker.get_href("http://dx.doi.org/10.5281/zenodo.1009240"),
-      "#http://dx.doi.org/10.5281/zenodo.1009240"
+    index_maker.make_index_html(
+      "text_citation", "zip_path"
     );
+
+    expect(SAMPLE_DIR).to.be.a.directory("is a dir").and.deep.equal(FIXTURE, "Matches fixture");
 
 
   });
+
 });
 
 
+// describe("Test async creation of CATALOG.html", function() {
+
+//   before(async function() {
+//     await fs.remove(DEFAULT_TEST_DIR);
+//     await fs.ensureDir(DEFAULT_TEST_DIR);
+//   })
 
 
-describe("Test async creation of CATALOG.html", function() {
+//   it("Can generate a single-page CATALOG.html", async function() {
+//     var index_maker = new Index();
 
-  before(async function() {
-    await fs.remove(DEFAULT_TEST_DIR);
-    await fs.ensureDir(DEFAULT_TEST_DIR);
-  })
+//     var template_ejs = await fs.readFile(defaults.catalog_template);
+//     var catalog_json = await fs.readJson(SAMPLE_CATALOG);
 
+//     index_maker.init_pure({
+//       catalog_json: catalog_json,
+//       template: template_ejs,
+//       multiple_files: false
+//     });
 
-  it("Can generate a single-page CATALOG.html", async function() {
-    var index_maker = new Index();
-
-    var template_ejs = await fs.readFile(defaults.catalog_template);
-    var catalog_json = await fs.readJson(SAMPLE_CATALOG);
-
-    index_maker.init_pure({
-      catalog_json: catalog_json,
-      template: template_ejs,
-      multiple_files: false
-    });
-
-    assert.equal(
-      index_maker.get_href("http://dx.doi.org/10.5281/zenodo.1009240"),
-      "#http://dx.doi.org/10.5281/zenodo.1009240"
-    );
+//     assert.equal(
+//       index_maker.get_href("http://dx.doi.org/10.5281/zenodo.1009240"),
+//       "#http://dx.doi.org/10.5281/zenodo.1009240"
+//     );
 
 
-  });
-});
+//   });
+// });
