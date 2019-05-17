@@ -54,12 +54,15 @@ describe("Test sync creation of multi-file html", function() {
       true
     );
 
+    expect(index_maker.html_file_name).to.equal("index.html");
+
     // this is sync
 
     index_maker.make_index_html(
-      "text_citation", "zip_path"
+      text_citation_1, "zip_path"
     );
 
+    // this doesn't test the contents
     expect(SAMPLE_DIR).to.be.a.directory("is a dir").and.deep.equal(FIXTURE, "Matches fixture");
 
 
