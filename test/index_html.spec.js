@@ -52,7 +52,9 @@ describe("Test sync creation of multi-file html", function() {
     index_maker.init({
       catalog_json: path.join("..", SAMPLE_CATALOG),
       out_dir: OUTPUT_DIR,
-      multiple_files: true
+      multiple_files: true,
+      force_timestamp: TIMESTAMP,
+      force_json_timestamp: TIMESTAMP
     });
 
     expect(index_maker.html_file_name).to.equal(defaults.html_file_name);
@@ -65,14 +67,14 @@ describe("Test sync creation of multi-file html", function() {
 
     // this doesn't test the contents, just the structure
 
-    expect(OUTPUT_DIR).to.be.a.directory("is a dir").and.deep.equal(FIXTURE, "Matches fixture");
+    expect(OUTPUT_DIR).to.be.a.directory("is a dir").and.deep.equal(FIXTURE, "directory structure matches fixture");
 
 
     expect(OUTPUT_DIR).to.be.a.directory("is a dir").with.deep.files.that.satisfy((files) => {
       return files.every((file) => {
         const fixture_file = path.join(FIXTURE, file);
         const output_file = path.join(OUTPUT_DIR, file);
-        expect(output_file).to.be.a.file(`file ${output_file}`).and.equal(fixture_file, `equals fixture`);
+        expect(output_file).to.be.a.file(`file ${output_file}`).and.equal(fixture_file, `${output_file} content matches`);
         return true;
       })
     })
