@@ -48,13 +48,13 @@ describe("Test sync creation of multi-file html", function() {
   it("Can generate multi-page CATALOG.html files", function() {
     var index_maker = new Index();
 
-    index_maker.init(
-      path.join("..", SAMPLE_CATALOG),
-      SAMPLE_DIR,
-      true
-    );
+    index_maker.init({
+      catalog_json: path.join("..", SAMPLE_CATALOG),
+      out_dir: SAMPLE_DIR,
+      multiple_files: true
+    });
 
-    expect(index_maker.html_file_name).to.equal("index.html");
+    expect(index_maker.html_file_name).to.equal(defaults.html_file_name);
 
     // this is sync
 
@@ -62,7 +62,8 @@ describe("Test sync creation of multi-file html", function() {
       text_citation_1, "zip_path"
     );
 
-    // this doesn't test the contents
+    // this doesn't test the contents, just the structure
+
     expect(SAMPLE_DIR).to.be.a.directory("is a dir").and.deep.equal(FIXTURE, "Matches fixture");
 
 
