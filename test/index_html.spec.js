@@ -30,6 +30,7 @@ const DEFAULT_TEST_DIR = "test_output";
 const OUTPUT_DIR = path.join(DEFAULT_TEST_DIR, "output");
 const SAMPLE_CATALOG = "test_data/sample_CATALOG.json";
 const FIXTURE = "test_data/fixtures/sample_html";
+const TIMESTAMP = '2019-05-16T03:09:09.518Z';
 const text_citation_1 =
   "Peter Sefton (2017) Sample dataset for DataCrate v0.2. University of Technology Sydney. Datacrate. http://dx.doi.org/10.5281/zenodo.1009240";
 const assert = require("assert");
