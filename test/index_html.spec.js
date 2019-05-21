@@ -27,7 +27,7 @@ const expect = chai.expect;
 
 
 const DEFAULT_TEST_DIR = "test_output";
-const SAMPLE_DIR = path.join(DEFAULT_TEST_DIR, "sample_multi");
+const OUTPUT_DIR = path.join(DEFAULT_TEST_DIR, "output");
 const SAMPLE_CATALOG = "test_data/sample_CATALOG.json";
 const FIXTURE = "test_data/fixtures/sample_html";
 const text_citation_1 =
@@ -39,8 +39,8 @@ describe("Test sync creation of multi-file html", function() {
   before(async function() {
     await fs.remove(DEFAULT_TEST_DIR);
     await fs.ensureDir(DEFAULT_TEST_DIR);
-    await fs.ensureDir(SAMPLE_DIR);
-    await fs.copy(SAMPLE_CATALOG, path.join(SAMPLE_DIR, 'CATALOG.json'));
+    await fs.ensureDir(OUTPUT_DIR);
+    await fs.copy(SAMPLE_CATALOG, path.join(OUTPUT_DIR, 'CATALOG.json'));
   })
 
 
@@ -50,7 +50,7 @@ describe("Test sync creation of multi-file html", function() {
 
     index_maker.init({
       catalog_json: path.join("..", SAMPLE_CATALOG),
-      out_dir: SAMPLE_DIR,
+      out_dir: OUTPUT_DIR,
       multiple_files: true
     });
 
@@ -64,8 +64,17 @@ describe("Test sync creation of multi-file html", function() {
 
     // this doesn't test the contents, just the structure
 
-    expect(SAMPLE_DIR).to.be.a.directory("is a dir").and.deep.equal(FIXTURE, "Matches fixture");
+    expect(OUTPUT_DIR).to.be.a.directory("is a dir").and.deep.equal(FIXTURE, "Matches fixture");
 
+
+    expect(OUTPUT_DIR).to.be.a.directory("is a dir").with.deep.files.that.satisfy((files) => {
+      return files.every((file) => {
+        const fixture_file = path.join(FIXTURE, file);
+        const output_file = path.join(OUTPUT_DIR, file);
+        expect(output_file).to.be.a.file(`file ${output_file}`).and.equal(fixture_file, `equals fixture`);
+        return true;
+      })
+    })
 
   });
 
