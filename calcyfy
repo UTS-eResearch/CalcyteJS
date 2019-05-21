@@ -158,7 +158,7 @@ console.log("Generating html from existing " + catalog_path  + " file");
     json_helper.trim_context()
     index_maker.init({
       catalog_json: json_helper.json_ld,
-      out_path: path.join(dir),
+      out_dir: path.join(dir),
       multiple_files: true,
       template_path: path.join(__dirname, "defaults/catalog_template.html")
     });
