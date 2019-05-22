@@ -46,7 +46,7 @@ describe("Test sync creation of multi-file html", function() {
 
 
 
-  it("Can generate multi-page CATALOG.html files", function() {
+  it("Can generate multi-page CATALOG.html files with the right paths", function() {
     var index_maker = new Index();
 
     index_maker.init({
@@ -70,6 +70,31 @@ describe("Test sync creation of multi-file html", function() {
     expect(OUTPUT_DIR).to.be.a.directory("is a dir").and.deep.equal(FIXTURE, "directory structure matches fixture");
 
 
+  });
+
+});
+
+
+it.skip("Can generate multi-page CATALOG.html files with the right content", function() {
+    var index_maker = new Index();
+
+    index_maker.init({
+      catalog_json: path.join("..", SAMPLE_CATALOG),
+      out_dir: OUTPUT_DIR,
+      multiple_files: true,
+      force_timestamp: TIMESTAMP,
+      force_json_timestamp: TIMESTAMP
+    });
+
+    expect(index_maker.html_file_name).to.equal(defaults.html_file_name);
+
+    // this is sync
+
+    index_maker.make_index_html(
+      text_citation_1, "zip_path"
+    );
+
+
     expect(OUTPUT_DIR).to.be.a.directory("is a dir").with.deep.files.that.satisfy((files) => {
       return files.every((file) => {
         const fixture_file = path.join(FIXTURE, file);
@@ -80,10 +105,9 @@ describe("Test sync creation of multi-file html", function() {
         return true;
       })
     })
-
-  });
-
 });
+
+
 
 
 // describe("Test async creation of CATALOG.html", function() {
