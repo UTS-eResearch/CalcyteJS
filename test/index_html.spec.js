@@ -74,7 +74,9 @@ describe("Test sync creation of multi-file html", function() {
       return files.every((file) => {
         const fixture_file = path.join(FIXTURE, file);
         const output_file = path.join(OUTPUT_DIR, file);
-        expect(output_file).to.be.a.file(`file ${output_file}`).and.equal(fixture_file, `${output_file} content matches`);
+        if ( file !== 'CATALOG.html' ) {
+          expect(output_file).to.be.a.file(`file ${output_file}`).and.equal(fixture_file, `${output_file} content matches`);
+        }
         return true;
       })
     })
