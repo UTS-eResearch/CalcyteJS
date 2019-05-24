@@ -26,9 +26,9 @@ chai.use(require("chai-fs"));
 const expect = chai.expect;
 
 
-const DEFAULT_TEST_DIR = "test_output";
-const OUTPUT_DIR = path.join(DEFAULT_TEST_DIR, "output");
-const OUTPUT_SYNC_DIR = path.join(DEFAULT_TEST_DIR, "output_sync");
+const TEST_OUTPUT_DIR = "test_output";
+const OUTPUT_DIR = path.join(TEST_OUTPUT_DIR, "output");
+const OUTPUT_DIR_CMP = path.join(TEST_OUTPUT_DIR, "output_cmp");
 const SAMPLE_CATALOG = "test_data/sample_CATALOG.json";
 const FIXTURE = "test_data/fixtures/sample_html";
 const TIMESTAMP = '2019-05-16T03:09:09.518Z';
@@ -39,8 +39,8 @@ const assert = require("assert");
 describe("Sync creation of multi-file html", function() {
 
   before(async function() {
-    await fs.remove(DEFAULT_TEST_DIR);
-    await fs.ensureDir(DEFAULT_TEST_DIR);
+    await fs.remove(TEST_OUTPUT_DIR);
+    await fs.ensureDir(TEST_OUTPUT_DIR);
     await fs.ensureDir(OUTPUT_DIR);
     await fs.copy(SAMPLE_CATALOG, path.join(OUTPUT_DIR, 'CATALOG.json'));
   })
@@ -48,7 +48,8 @@ describe("Sync creation of multi-file html", function() {
 
 
   it("Can synchronously create multi-page CATALOG.html file structure", function() {
-    var index_maker = new Index();
+    const index_maker = new Index();
+
 
     index_maker.init({
       catalog_json: path.join("..", SAMPLE_CATALOG),
@@ -120,39 +121,47 @@ it.skip("Can synchronously create multi-page CATALOG.html file contents", functi
 describe("Async creation of multi-file html", function() {
 
   before(async function() {
-    await fs.remove(DEFAULT_TEST_DIR);
-    await fs.ensureDir(DEFAULT_TEST_DIR);
+    await fs.remove(TEST_OUTPUT_DIR);
+    await fs.ensureDir(TEST_OUTPUT_DIR);
+    await fs.ensureDir(OUTPUT_DIR);
+    await fs.ensureDir(OUTPUT_DIR_CMP);
+    await fs.copy(SAMPLE_CATALOG, path.join(OUTPUT_DIR, 'CATALOG.json'));
+    await fs.copy(SAMPLE_CATALOG, path.join(OUTPUT_DIR_CMP, 'CATALOG.json'));
   })
 
 
   it("Can asynchronously create multi-page CATALOG.html file structure", async function() {
-    var index = new Index();
-    var index_sync = new Index();
+    const index = new Index();
+    const index_sync = new Index();
 
-    var template_ejs = await fs.readFile(defaults.catalog_template);
-    var catalog_json = await fs.readJson(SAMPLE_CATALOG);
+    const template_buffer = await fs.readFile(defaults.catalog_template);
+    const template_ejs = template_buffer.toString();
+    const catalog_json = await fs.readJson(SAMPLE_CATALOG);
 
     index.init_pure({
       catalog_json: catalog_json,
       template: template_ejs,
-      multiple_files: false
+      multiple_files: true,
+      force_timestamp: TIMESTAMP,
+      json_timestamp: TIMESTAMP
     });
 
-    const pages = index.make_index_pages(text_citation_1, "zip_path");
+    const pages = index.make_index_async(text_citation_1, "zip_path");
 
-    for( var i in pages ) {
-      const p = pages[i];
-      const page_html = index.template_html(p.node, p.html);
-      const out_path = path.join(this.out_dir, index.get_html_path(p.node['@id']));
-      await fs.ensureDir(out_path);
-      await fs.writeFile(path.join(out_path, index.html_file_name), page_html);
-    }
+    for( page of pages ) {
+      const p = path.join(OUTPUT_DIR, page.path);
+      await fs.ensureDir(p);
+      const file = path.join(p, index.html_file_name);
+      await fs.writeFile(file, page.html)
+    };
+
+    console.log("making the sync copy");
 
     // make a sync one to compare it with
 
     index_sync.init({
       catalog_json: path.join("..", SAMPLE_CATALOG),
-      out_dir: OUTPUT_SYNC_DIR,
+      out_dir: OUTPUT_DIR_CMP,
       multiple_files: true,
       force_timestamp: TIMESTAMP,
       force_json_timestamp: TIMESTAMP
@@ -165,16 +174,18 @@ describe("Async creation of multi-file html", function() {
     );
 
 
-    expect(OUTPUT_DIR).to.be.a.directory("is a dir").with.deep.files.that.satisfy((files) => {
-      return files.every((file) => {
-        const fixture_file = path.join(OUTPUT_SYNC_DIR, file);
-        const output_file = path.join(OUTPUT_DIR, file);
-        if ( file !== 'CATALOG.html' ) {
-          expect(output_file).to.be.a.file(`file ${output_file}`).and.equal(fixture_file, `${output_file} content matches`);
-        }
-        return true;
-      })
-    })
+    expect(OUTPUT_DIR).to.be.a.directory("is a dir").and.deep.equal(FIXTURE, "directory structure matches fixture");
+
+    // expect(OUTPUT_DIR).to.be.a.directory("is a dir").with.deep.files.that.satisfy((files) => {
+    //   return files.every((file) => {
+    //     const fixture_file = path.join(OUTPUT_DIR_CMP, file);
+    //     const output_file = path.join(OUTPUT_DIR, file);
+    //     if ( file !== 'CATALOG.html' ) {
+    //       expect(output_file).to.be.a.file(`file ${output_file}`).and.equal(fixture_file, `${output_file} content matches`);
+    //     }
+    //     return true;
+    //   })
+    // })
 
 
 
