@@ -134,19 +134,20 @@ describe("Async creation of multi-file html", function() {
     const index = new Index();
     const index_sync = new Index();
 
-    const template_buffer = await fs.readFile(defaults.catalog_template);
-    const template_ejs = template_buffer.toString();
     const catalog_json = await fs.readJson(SAMPLE_CATALOG);
+
 
     index.init_pure({
       catalog_json: catalog_json,
-      template: template_ejs,
       multiple_files: true,
       force_timestamp: TIMESTAMP,
       json_timestamp: TIMESTAMP
     });
 
-    const pages = index.make_index_async(text_citation_1, "zip_path");
+    await index.load_template();
+
+
+    const pages = index.make_index_pure(text_citation_1, "zip_path");
 
     for( page of pages ) {
       const p = path.join(OUTPUT_DIR, page.path);
