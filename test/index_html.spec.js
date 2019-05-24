@@ -155,8 +155,6 @@ describe("Async creation of multi-file html", function() {
       await fs.writeFile(file, page.html)
     };
 
-    console.log("making the sync copy");
-
     // make a sync one to compare it with
 
     index_sync.init({
@@ -176,16 +174,16 @@ describe("Async creation of multi-file html", function() {
 
     expect(OUTPUT_DIR).to.be.a.directory("is a dir").and.deep.equal(FIXTURE, "directory structure matches fixture");
 
-    // expect(OUTPUT_DIR).to.be.a.directory("is a dir").with.deep.files.that.satisfy((files) => {
-    //   return files.every((file) => {
-    //     const fixture_file = path.join(OUTPUT_DIR_CMP, file);
-    //     const output_file = path.join(OUTPUT_DIR, file);
-    //     if ( file !== 'CATALOG.html' ) {
-    //       expect(output_file).to.be.a.file(`file ${output_file}`).and.equal(fixture_file, `${output_file} content matches`);
-    //     }
-    //     return true;
-    //   })
-    // })
+    expect(OUTPUT_DIR).to.be.a.directory("is a dir").with.deep.files.that.satisfy((files) => {
+      return files.every((file) => {
+        const fixture_file = path.join(OUTPUT_DIR_CMP, file);
+        const output_file = path.join(OUTPUT_DIR, file);
+        if ( file !== 'CATALOG.html' ) {
+          expect(output_file).to.be.a.file(`file ${output_file}`).and.equal(fixture_file, `${output_file} content matches`);
+        }
+        return true;
+      })
+    })
 
 
 
