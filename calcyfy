@@ -104,7 +104,7 @@ else {
 
 function generateHTML(catalog_path) {
 
-console.log("Generating html from exsiting " + catalog_path  + " file");
+console.log("Generating html from existing " + catalog_path  + " file");
     if (!path.isAbsolute(catalog_path)) {
         catalog_path = path.join(process.cwd(), catalog_path);
     }
@@ -156,12 +156,12 @@ console.log("Generating html from exsiting " + catalog_path  + " file");
     }
     var index_maker = new Index();
     json_helper.trim_context()
-    index_maker.init(
-      json_helper.json_ld,
-      path.join(dir),
-      true,
-      path.join(__dirname, "defaults/catalog_template.html")
-    );
+    index_maker.init({
+      catalog_json: json_helper.json_ld,
+      out_dir: path.join(dir),
+      multiple_files: true,
+      template_path: path.join(__dirname, "defaults/catalog_template.html")
+    });
    
       
      

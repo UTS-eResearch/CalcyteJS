@@ -104,7 +104,7 @@ describe("Nested", function() {
       "contentUrl: ./"
     );
     assert.equal(f.property_URI, "http://schema.org/distribution");
-    console.log(f.nested_item_json);
+    // console.log(f.nested_item_json);
 
     done();
   });

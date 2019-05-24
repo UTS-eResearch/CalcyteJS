@@ -112,10 +112,10 @@ describe("Create MANY CATALOGS", function() {
     this.timeout(15000);
     shell.mkdir("-p", path.join(test_path, "a", "a", "a", "b"));
     shell.mkdir("-p", path.join(test_path, "b", "a", "a", "b"));
-    console.log(test_path);
+    //console.log(test_path);
     var c = new Collection();
     c.read(test_path, "./", false, 1000);
-    console.log(c.existing_catalogs);
+    // console.log(c.existing_catalogs);
     //console.log(shell.test('-e', path.join(test_path,"a","CATALOG_a.xlsx")))
     assert(shell.test("-e", path.join(test_path, "a", "CATALOG_a.xlsx")));
     assert(
@@ -234,7 +234,6 @@ describe("Glop Plot data", function() {
         );
         
         assert.equal(c.item_by_url["sketchsheets"]["hasPart"].length, 3);
-        console.log("IDS", c.item_by_id);
         var a_file = c.item_by_id["sketchsheets/CP7Glopsketch01.jpg"];
         assert.equal(a_file.contentSize, "179640");
         assert.equal(a_file.encodingFormat, "JPEG File Interchange Format");
@@ -345,7 +344,7 @@ describe("Datacite", function() {
   it("Should create a data citation", function() {
     var c = new Collection();
     c.read(test_path);
-    console.log(c.collection_metadata.properties);
+    //console.log(c.collection_metadata.properties);
     return c.to_json_ld().then(
       function() {
         citer = new Datacite();
