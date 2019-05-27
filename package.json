@@ -1,6 +1,6 @@
 {
   "name": "calcyte",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Calcyte is a command-line tool and set of libraries for creating and managing DataCrate data packages",
   "main": "index.js",
   "bin": {
