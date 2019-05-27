@@ -1,5 +1,6 @@
 node_modules
 .DS_Store
 .idea
+.search-results.zkr
 test_data/output/
 test_data/catalog/index.html
