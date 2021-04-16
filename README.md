@@ -1,6 +1,8 @@
-# CalcyteJS
+# CalcyteJS DEPRECATED - DO NOT USE
 
-This is a work-in-progress port of the python-based [Calcyte tool](https://codeine.research.uts.edu.au/eresearch/calcyte).
+THIS CODE IS DEPRECATED - DO NOT USE
+
+This WAS a work-in-progress port of the python-based [Calcyte tool](https://codeine.research.uts.edu.au/eresearch/calcyte).
 
 ## Status
 
