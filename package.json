@@ -20,7 +20,7 @@
     "chai-fs": "^2.0.0",
     "cheerio": "^1.0.0-rc.2",
     "ejs": "^2.5.7",
-    "filesize": "^3.6.1",
+    "filesize": "^7.0.0",
     "fs-extra": "^8.0.1",
     "gladstone": "^0.2.4",
     "html-entities": "^1.2.1",
