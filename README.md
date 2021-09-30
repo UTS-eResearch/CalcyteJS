@@ -4,6 +4,8 @@ THIS CODE IS DEPRECATED - DO NOT USE
 
 This WAS a work-in-progress port of the python-based [Calcyte tool](https://codeine.research.uts.edu.au/eresearch/calcyte).
 
+This has been replaced by [RO-Crate Excel](https://github.com/UTS-eResearch/ro-crate-excel)
+
 ## Status
 
 This is Beta code.
